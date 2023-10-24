@@ -1,0 +1,21 @@
+[{
+  "file": "E:\\DataStructure\\DS_PECL1\\DS_PECL1\\main.cpp",
+  "directory": "E:\\DataStructure\\DS_PECL1\\DS_PECL1",
+  "command": "E:/MinGW/bin/g++.exe -c E:\\DataStructure\\DS_PECL1\\DS_PECL1\\main.cpp -o E:\\DataStructure\\DS_PECL1\\DS_PECL1\\main.cpp.o -target mingw32 -Ie:\\MinGW\\lib\\gcc\\mingw32\\6.3.0\\include\\c++ -Ie:\\MinGW\\lib\\gcc\\mingw32\\6.3.0\\include\\c++\\mingw32 -Ie:\\MinGW\\lib\\gcc\\mingw32\\6.3.0\\include\\c++\\backward -Ie:\\MinGW\\lib\\gcc\\mingw32\\6.3.0\\include -Ie:\\MinGW\\include -Ie:\\MinGW\\lib\\gcc\\mingw32\\6.3.0\\include-fixed -I. -I.  -gdwarf-2  -O0  -Wall"
+ }, {
+  "file": "E:\\DataStructure\\DS_PECL1\\DS_PECL1\\Package.hpp",
+  "directory": "E:\\DataStructure\\DS_PECL1\\DS_PECL1",
+  "command": "E:/MinGW/bin/g++.exe -c E:\\DataStructure\\DS_PECL1\\DS_PECL1\\Package.hpp -o E:\\DataStructure\\DS_PECL1\\DS_PECL1\\Package.hpp.o -target mingw32 -Ie:\\MinGW\\lib\\gcc\\mingw32\\6.3.0\\include\\c++ -Ie:\\MinGW\\lib\\gcc\\mingw32\\6.3.0\\include\\c++\\mingw32 -Ie:\\MinGW\\lib\\gcc\\mingw32\\6.3.0\\include\\c++\\backward -Ie:\\MinGW\\lib\\gcc\\mingw32\\6.3.0\\include -Ie:\\MinGW\\include -Ie:\\MinGW\\lib\\gcc\\mingw32\\6.3.0\\include-fixed -I. -I.  -gdwarf-2  -O0  -Wall"
+ }, {
+  "file": "E:\\DataStructure\\DS_PECL1\\DS_PECL1\\Package.cpp",
+  "directory": "E:\\DataStructure\\DS_PECL1\\DS_PECL1",
+  "command": "E:/MinGW/bin/g++.exe -c E:\\DataStructure\\DS_PECL1\\DS_PECL1\\Package.cpp -o E:\\DataStructure\\DS_PECL1\\DS_PECL1\\Package.cpp.o -target mingw32 -Ie:\\MinGW\\lib\\gcc\\mingw32\\6.3.0\\include\\c++ -Ie:\\MinGW\\lib\\gcc\\mingw32\\6.3.0\\include\\c++\\mingw32 -Ie:\\MinGW\\lib\\gcc\\mingw32\\6.3.0\\include\\c++\\backward -Ie:\\MinGW\\lib\\gcc\\mingw32\\6.3.0\\include -Ie:\\MinGW\\include -Ie:\\MinGW\\lib\\gcc\\mingw32\\6.3.0\\include-fixed -I. -I.  -gdwarf-2  -O0  -Wall"
+ }, {
+  "file": "E:\\DataStructure\\DS_PECL1\\DS_PECL1\\Randomize.hpp",
+  "directory": "E:\\DataStructure\\DS_PECL1\\DS_PECL1",
+  "command": "E:/MinGW/bin/g++.exe -c E:\\DataStructure\\DS_PECL1\\DS_PECL1\\Randomize.hpp -o E:\\DataStructure\\DS_PECL1\\DS_PECL1\\Randomize.hpp.o -target mingw32 -Ie:\\MinGW\\lib\\gcc\\mingw32\\6.3.0\\include\\c++ -Ie:\\MinGW\\lib\\gcc\\mingw32\\6.3.0\\include\\c++\\mingw32 -Ie:\\MinGW\\lib\\gcc\\mingw32\\6.3.0\\include\\c++\\backward -Ie:\\MinGW\\lib\\gcc\\mingw32\\6.3.0\\include -Ie:\\MinGW\\include -Ie:\\MinGW\\lib\\gcc\\mingw32\\6.3.0\\include-fixed -I. -I.  -gdwarf-2  -O0  -Wall"
+ }, {
+  "file": "E:\\DataStructure\\DS_PECL1\\DS_PECL1\\Randomize.cpp",
+  "directory": "E:\\DataStructure\\DS_PECL1\\DS_PECL1",
+  "command": "E:/MinGW/bin/g++.exe -c E:\\DataStructure\\DS_PECL1\\DS_PECL1\\Randomize.cpp -o E:\\DataStructure\\DS_PECL1\\DS_PECL1\\Randomize.cpp.o -target mingw32 -Ie:\\MinGW\\lib\\gcc\\mingw32\\6.3.0\\include\\c++ -Ie:\\MinGW\\lib\\gcc\\mingw32\\6.3.0\\include\\c++\\mingw32 -Ie:\\MinGW\\lib\\gcc\\mingw32\\6.3.0\\include\\c++\\backward -Ie:\\MinGW\\lib\\gcc\\mingw32\\6.3.0\\include -Ie:\\MinGW\\include -Ie:\\MinGW\\lib\\gcc\\mingw32\\6.3.0\\include-fixed -I. -I.  -gdwarf-2  -O0  -Wall"
+ }]
