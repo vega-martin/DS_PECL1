@@ -93,6 +93,8 @@
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
+    <File Name="Queue.cpp"/>
+    <File Name="Queue.hpp"/>
     <File Name="Stack.cpp"/>
     <File Name="Stack.hpp"/>
     <File Name="Randomize.cpp"/>

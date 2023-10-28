@@ -1,50 +1,43 @@
+#include <iostream>
+#include <stdexcept>
 #include "Stack.hpp"
 
 template <typename T> // Explained in header
 
-/* --> I think we don't need this
-Stack::Stack()
-{
+Stack::Stack(int capaity){
+    this->capacity = capacity;
+    element = new T[capacity];
+    top = -1; 
 }
-
-Stack::~Stack()
-{
-}
-*/
 
 // Function to insert elements in the Stack
-void Stack::insert(T value){
-    Node *newElement = new Node(value);
-    (*newElement).next = theTop;
-    /* apparently this is the way to access a member of a struct
-     * when referended. The way newElement.next is valid only for objects
-     * another way would be newElement->next=theTop;
-     * */
-    theTop = newElement;
+void Stack::insert(const T &value){ // access the value by reference and make it read only with "const"
+    if (top < capacity - 1){
+        top++;
+        element[top] = value;
+    } else {
+        throw std::overflow_error("Stack is full!!!");
+    }
 }
 
 // Function to pop an element from the Stack (LIFO)
 T Stack::extract(){
-    if(isEmpty){
-        std::cout << "Watch it! Empty Stack." << std:endl;
+    if(top >= 0){
+        return data[top--]; //devuelve data[top] y luego top--
     } else {
-        Node auxPointer; // Declare an auxiliary pointer
-        T auxVar; // Declare an auxiliary variable
-        auxPointer = theTop; // auxPointer now point to the top of the Stack
-        theTop = (*auxPointer).next; // theTop moves to the next element
-        auxVar = (*auxPointer).element; // Store the element we are poping into auxVar
-        delete auxPointer; // Delete the auxiliary pointer
-        return auxVar;
+        throw std::underflow_error("Stack is empty!!!");
     }
 }
 
-/* --> IDK if we are going to need this or not
-// Function to show the elements od the stack
-void Stack::show(){
-    
-}*/
-
 // Function to determinte if the Stack is empty
 bool Stack::isEmpty(){
-    return theTop == nullptr; //theTop is a null pointer (pointing to a null value)?
+    return top == -1;
+}
+
+bool Stack::isFull(){
+    return top == capacity - 1;
+}
+
+void Stack::makeNull(){
+    top = -1;
 }
