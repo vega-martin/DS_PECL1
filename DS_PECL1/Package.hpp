@@ -29,8 +29,8 @@ public:
     char generateId();
     char generateCoords();
     //void add();
-    //Package();
-    //~Package();
+    //Package(); --> constructor
+    //~Package(); --> destructor
 
 };
 

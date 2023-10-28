@@ -93,6 +93,8 @@
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
+    <File Name="Stack.cpp"/>
+    <File Name="Stack.hpp"/>
     <File Name="Randomize.cpp"/>
     <File Name="Randomize.hpp"/>
     <File Name="Package.cpp"/>
