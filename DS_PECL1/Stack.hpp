@@ -4,7 +4,7 @@
 template <typename T> //this way it works with any data type (just in case)
 
 class Stack {
-    
+
 private:
     T *element;
     int capacity; // max capacity of the stack
