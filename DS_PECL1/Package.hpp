@@ -1,13 +1,13 @@
 #ifndef PACKAGE_HPP
 #define PACKAGE_HPP
-
-/*typedef struct Id(){
+/*
+typedef struct Id(){
     char randint[3];
     char randchar;
     char date[8];
     char zone[2];
 };*/
-
+/*
 typedef struct Coords(){
     int degrees;
     int minutes;
@@ -19,11 +19,11 @@ typedef struct Label(){
     Coords coords;
     char DNI[9];
 };
-
+*/
 class Package {
 private:
-    Label label;
-    char status;
+    char label;
+    enum status {CentralStation, Hub, OnItsWay, Delivered}; // los diferentes estados en el q puede estar un paquete
 public:
     void createPackage();
     char generateId();

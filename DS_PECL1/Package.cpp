@@ -10,10 +10,10 @@ char generateCoords(){
     
 }
 
-/*Package::Package()
+Package::Package()
 {
 }
 
 Package::~Package()
 {
-}*/
+}
