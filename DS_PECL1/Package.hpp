@@ -1,36 +1,37 @@
 #ifndef PACKAGE_HPP
 #define PACKAGE_HPP
-/*
-typedef struct Id(){
-    char randint[3];
-    char randchar;
-    char date[8];
-    char zone[2];
-};*/
-/*
-typedef struct Coords(){
-    int degrees;
-    int minutes;
-    int seconds;
-};
+#include <string>
 
-typedef struct Label(){
-    Id id;
-    Coords coords;
-    char DNI[9];
-};
-*/
 class Package {
 private:
-    char label;
-    enum status {CentralStation, Hub, OnItsWay, Delivered}; // los diferentes estados en el q puede estar un paquete
+
+    Status status;
+    Label label;
+    
+    //no se muy bn por que pero al precer esto va aqui
+    //creo q es porqeu así solo se usan dentro del constructor y no en el main()
+    std::string generateClientId();
+    Label::Coords generateCoordenates();
+    std::string generateLabelId(const Label::Coords &coordinates);
+
 public:
-    void createPackage();
-    char generateId();
-    char generateCoords();
-    //void add();
-    //Package(); --> constructor
-    //~Package(); --> destructor
+
+    Package();
+    
+    Status getStatus();
+    Label getLabel(); //no se si lo vamos a necesitar
+    
+    enum Status {CentralStation, Hub, OnItsWay, Delivered}; // los diferentes estados en el q puede estar un paquete
+    
+    struct Label {
+        std::string packageId;
+        std::string clienteId;
+        struct Coords {
+            char latitud[8];
+            char longitude[8];
+            char hub[2];
+        } coordinates;
+    };
 
 };
 
