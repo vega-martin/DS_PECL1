@@ -2,6 +2,19 @@
 #define PACKAGE_HPP
 #include <string>
 
+enum Status {CentralStation, Hub, OnItsWay, Delivered}; // los diferentes estados en el q puede estar un paquete
+    
+struct Label {
+    std::string packageId;
+    std::string clientId;
+    // struct de coordenadas dfeinido en e struct de label
+    struct Coords {
+        std::string latitude; // latitud formato __ __ __
+        std::string longitude; // longitud formato __ __ __
+        char hub[2]; // zona de las coordenadas (SW,SE,NW,NE)
+    } coordinates;
+};
+
 class Package {
 private:
 
@@ -21,18 +34,7 @@ public:
     Status getStatus();
     Label getLabel(); //no se si lo vamos a necesitar
     
-    enum Status {CentralStation, Hub, OnItsWay, Delivered}; // los diferentes estados en el q puede estar un paquete
     
-    struct Label {
-        std::string packageId;
-        std::string clienteId;
-        // struct de coordenadas dfeinido en e struct de label
-        struct Coords {
-            std::string latitud; // latitud formato __ __ __
-            std::string longitude; // longitud formato __ __ __
-            char hub[2]; // zona de las coordenadas (SW,SE,NW,NE)
-        } coordinates;
-    };
 
 };
 
