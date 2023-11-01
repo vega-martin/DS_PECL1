@@ -11,7 +11,7 @@ private:
     //no se muy bn por que pero al precer esto va aqui
     //creo q es porque así solo se usan dentro del constructor y no en el main()
     std::string generateClientId();
-    Label::Coords generateCoordenates();
+    Label::Coords generateCoordinates();
     std::string generateLabelId(const Label::Coords &coordinates);
 
 public:

@@ -4,7 +4,7 @@
 #include "Package.hpp"
 
 
-Package::Label::Coords Package::generateCoordenates(){
+Package::Label::Coords Package::generateCoordinates(){
     srand(time(NULL));
     //latidud entre 41.070998 y 40.854057
     float lat = 40.854057 + rand() % 41.070999;
@@ -78,7 +78,23 @@ std::string generateClientId(){
 }
 
 
-Package::Package()
-{
+Package::Package(){
+    //first status recorded ?
+    status = Status::AtCentralStation;
+    
+    //generate label
+    label.clienteId = generateClientId();
+    label.coordinates = generateCoordenates();
+    label.packageId = generateLabelId(label.coordinates);
+    
 }
 
+
+Package::Status Package::getStatus(){
+    return status;
+}
+
+
+Package::Label Package::getLabel(){
+    return label;
+}
