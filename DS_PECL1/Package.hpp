@@ -9,7 +9,7 @@ private:
     Label label;
     
     //no se muy bn por que pero al precer esto va aqui
-    //creo q es porqeu así solo se usan dentro del constructor y no en el main()
+    //creo q es porque así solo se usan dentro del constructor y no en el main()
     std::string generateClientId();
     Label::Coords generateCoordenates();
     std::string generateLabelId(const Label::Coords &coordinates);
@@ -26,10 +26,11 @@ public:
     struct Label {
         std::string packageId;
         std::string clienteId;
+        // struct de coordenadas dfeinido en e struct de label
         struct Coords {
-            char latitud[8];
-            char longitude[8];
-            char hub[2];
+            std::string latitud; // latitud formato __ __ __
+            std::string longitude; // longitud formato __ __ __
+            char hub[2]; // zona de las coordenadas (SW,SE,NW,NE)
         } coordinates;
     };
 
