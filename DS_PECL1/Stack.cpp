@@ -4,7 +4,7 @@
 
 //template <typename T> // Explained in header
 
-Stack::Stack(int capaity){
+Stack::Stack(int capacity){
     this->capacity = capacity;
     elements = new Package[capacity];
     top = capacity + 1; 
