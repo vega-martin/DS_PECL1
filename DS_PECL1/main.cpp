@@ -1,66 +1,86 @@
 #include <iostream>
-#include <ctime>
-#include <random>
+//#include <ctime>
+//#include <random>
 #include "Stack.hpp"
 #include "Package.hpp"
 //#include "Queue.hpp"
+using namespace std;
 
 int main(){
     
-	std::cout << "Yeah, it compiled!\n"<<std::endl;
+	cout << "Yeah, it compiled!\n"<< endl;
     
-    std::cout << "Package class tester\n"<<std::endl;
+    cout << "Package class tester\n"<< endl;
     
-    std::random_device rd;
-    std::mt19937 gen(rd());
+    //std::random_device rd;
+    //std::mt19937 gen(rd());
     
     Package p1;
     
-    std::cout << "P1 status: ";
+	cout << "P1 status: ";
     switch (p1.getStatus()) {
         case Status::CentralStation:
-            std::cout << "At Central Station";
+			cout << "At Central Station";
             break;
         case Status::Hub:
-            std::cout << "At the Hub";
+			cout << "At the Hub";
             break;
         case Status::OnItsWay:
-            std::cout << "On Its Way";
+			cout << "On Its Way";
             break;
         case Status::Delivered:
-            std::cout << "Delivered";
+            cout << "Delivered";
             break;
     }
-    std::cout << std::endl;
-    std::cout << "P1 client id: " << p1.getLabel().clientId << std::endl;
-    std::cout << "P1 coordinates: " << p1.getLabel().coordinates.latitude << ", " << p1.getLabel().coordinates.longitude << ", " << p1.getLabel().coordinates.hub << std::endl;
-    std::cout << "P1 client id: " << p1.getLabel().packageId << std::endl;
+    cout << endl;
+    cout << "P1 client id: " << p1.getLabel().clientId << endl;
+    cout << "P1 coordinates: " << p1.getLabel().coordinates.latitude << ", " << p1.getLabel().coordinates.longitude << ", " << p1.getLabel().coordinates.hub << endl;
+    cout << "P1 client id: " << p1.getLabel().packageId << endl;
     
     
     Package p2;
     
-    std::cout << "P2 status: ";
+	p2.setStatus(OnItsWay);
+    cout << "P2 status: ";
     switch (p2.getStatus()) {
         case Status::CentralStation:
-            std::cout << "At Central Station";
+            cout << "At Central Station";
             break;
         case Status::Hub:
-            std::cout << "At the Hub";
+            cout << "At the Hub";
             break;
         case Status::OnItsWay:
-            std::cout << "On Its Way";
+            cout << "On Its Way";
             break;
         case Status::Delivered:
-            std::cout << "Delivered";
+            cout << "Delivered";
             break;
     }
-    std::cout << std::endl;
-    std::cout << "P2 client id: " << p2.getLabel().clientId << std::endl;
-    std::cout << "P2 coordinates: " << p2.getLabel().coordinates.latitude << ", " << p2.getLabel().coordinates.longitude << ", " << p2.getLabel().coordinates.hub << std::endl;
-    std::cout << "P2 client id: " << p2.getLabel().packageId << std::endl;
+    cout << endl;
+    cout << "P2 client id: " << p2.getLabel().clientId << endl;
+    cout << "P2 coordinates: " << p2.getLabel().coordinates.latitude << ", " << 
+	p2.getLabel().coordinates.longitude << ", " << p2.getLabel().coordinates.hub << endl;
+    cout << "P2 client id: " << p2.getLabel().packageId << endl;
     
-    std::cout << "Stack class tester\n"<<std::endl;
+	Package p3;
+	
+    cout << "\nStack class tester\n"<< endl;
     
+	Stack van(4);
+	cout << "this shoul be 1: " << van.isEmpty() << endl;
+	van.insert(p1);//el error esta aqui
+	cout << "this shoul be 0: ";// << van.isEmpty() << endl;
+	cout << "this shoul be 0: ";// << van.isFull() << endl;
+	van.insert(p2);
+	van.insert(p3);
+	cout << "this shoul be 0: " << van.isEmpty() << endl;
+	cout << "this shoul be 1: " << van.isFull() << endl;
+	van.extract();
+	cout << "this shoul be 0: " << van.isEmpty() << endl;
+	cout << "this shoul be 0: " << van.isFull() << endl;
+	van.makeNull();
+	cout << "this shoul be 1: " << van.isEmpty() << endl;
+	cout << "this shoul be 0: " << van.isFull() << endl;
     
     
 	return 0;

@@ -1,8 +1,7 @@
-#include <iostream>
+//#include <iostream>
 #include <stdexcept>
 #include "Stack.hpp"
 
-//template <typename T> // Explained in header
 
 Stack::Stack(int capacity){
     this->capacity = capacity;
