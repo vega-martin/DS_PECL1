@@ -4,17 +4,18 @@
 #include "Package.hpp"
 using namespace std;
 
+std::random_device global_rd;
+
 Label::Coords Package::generateCoordinates(){
     // Generate random coordinates:
-    random_device rn;
-    mt19937 gen(rn());
+    mt19937 gen(global_rd());
     //latidud entre 41.070998 y 40.854057
     uniform_real_distribution<double> distributionLat(40.854057, 41.070999);
     double lat = distributionLat(gen); 
     int latD = (int)lat;
     int latM = (int) ((lat - (double)latD) * 60.f);
     int latS = (int) (((lat - (double)latD) * 60.f - (double)latM) * 60.f);
-    
+        
     //longitud entre -5.837731 y -5.483051
     uniform_real_distribution<double> distributionLon(-5.837731, -5.483050);
     double lon = distributionLon(gen);
@@ -51,42 +52,45 @@ Label::Coords Package::generateCoordinates(){
 }
 
 
-string Package::generateLabelId(const Label::Coords &coordinates){
-    
-    srand(time(0));
-    
-    int randNum = rand() % 1000;
-    // Ensure it has 3 digits:    
-    string formattedNumber = to_string(randNum);
-    while (formattedNumber.length() < 3) {
-        formattedNumber = "0" + formattedNumber;
-    }
-    
+string Package::generateLabelId(const Label::Coords &coordinates) {
+    mt19937 gen(global_rd());
+    uniform_int_distribution<int> distribution(0, 25); // 26 letters in the array
+
+    // Get the random index from the distribution
+    int randomIndex = distribution(gen);
+
     // Array of English alphabet letters (capitalized)
     char alphabet[] = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
 
-    // Generate a random index
-    int randomIndex = rand() % 26; // 26 letters in the array
-
     // Get the random letter from the array
     char randLetter = alphabet[randomIndex];
-    
+
     //obtener fecha
     time_t time = std::time(nullptr);
     tm *now = localtime(&time);
     string date = to_string(now->tm_mday) + to_string(now->tm_mon + 1) + to_string(now->tm_year + 1900);
+    
     //obtener hub
     string hub = coordinates.hub;
-    // final label id
+
+    // Ensure randNum has 3 digits
+    uniform_int_distribution<int> randNumDistribution(0, 999);
+    int randNum = randNumDistribution(gen);
+    string formattedNumber = to_string(randNum);
+    while (formattedNumber.length() < 3) {
+        formattedNumber = "0" + formattedNumber;
+    }
+
+    // Final label id
     string labelId = formattedNumber + randLetter + date + hub;
-    
+
     return labelId;
 }
 
 
+
 string Package::generateClientId(){
-    random_device rn1; //rn = random number...it's just a name
-    mt19937 gen(rn1()); // genera la semilla por asi decirlo
+    mt19937 gen(global_rd());
     uniform_int_distribution<int> distribution(10000000, 99999999); //8cifras
     int idNum = distribution(gen);
     char letter[23] = {'T','R','W','A','G','M','Y','F','P','D','X','B','N','J','Z','S','Q','V','H','L','C','K','E'};
@@ -100,8 +104,7 @@ string Package::generateClientId(){
 
 Package::Package(){
     
-    random_device rn2;
-    mt19937 gen(rn2());
+    mt19937 gen(global_rd());
     //first status recorded ?
     status = Status::CentralStation;
     

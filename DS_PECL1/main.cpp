@@ -1,9 +1,5 @@
 #include <iostream>
-//#include <ctime>
-//#include <random>
-#include "Stack.hpp"
 #include "Package.hpp"
-//#include "Queue.hpp"
 using namespace std;
 
 int main(){
@@ -35,7 +31,7 @@ int main(){
     cout << endl;
     cout << "P1 client id: " << p1.getLabel().clientId << endl;
     cout << "P1 coordinates: " << p1.getLabel().coordinates.latitude << ", " << p1.getLabel().coordinates.longitude << ", " << p1.getLabel().coordinates.hub << endl;
-    cout << "P1 client id: " << p1.getLabel().packageId << endl;
+    cout << "P1 package id: " << p1.getLabel().packageId << endl;
     
     
     Package p2;
@@ -58,9 +54,8 @@ int main(){
     }
     cout << endl;
     cout << "P2 client id: " << p2.getLabel().clientId << endl;
-    cout << "P2 coordinates: " << p2.getLabel().coordinates.latitude << ", " << 
-	p2.getLabel().coordinates.longitude << ", " << p2.getLabel().coordinates.hub << endl;
-    cout << "P2 client id: " << p2.getLabel().packageId << endl;
+    cout << "P2 coordinates: " << p2.getLabel().coordinates.latitude << ", " << p2.getLabel().coordinates.longitude << ", " << p2.getLabel().coordinates.hub << endl;
+    cout << "P2 package id: " << p2.getLabel().packageId << endl;
     
 	Package p3;
     

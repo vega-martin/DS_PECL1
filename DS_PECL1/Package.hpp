@@ -32,6 +32,7 @@ private:
     string generateClientId();
     Label::Coords generateCoordinates();
     string generateLabelId(const Label::Coords &coordinates);
+    
 
 public:
 
