@@ -1,9 +1,9 @@
 #include <iostream>
 //#include <ctime>
 //#include <random>
-#include "Stack.hpp"
+//#include "Stack.hpp"
 #include "Package.hpp"
-//#include "Queue.hpp"
+#include "Queue.hpp"
 using namespace std;
 
 int main(){
@@ -63,6 +63,17 @@ int main(){
     cout << "P2 client id: " << p2.getLabel().packageId << endl;
     
 	Package p3;
+	cout << "\nQueue class tester\n"<< endl;
+	
+	Queue hub;
+	cout << "this shoul be 1: " << hub.isEmpty() << endl;
+	hub.insert(p1);
+	cout << "this shoul be 0: " << hub.isEmpty() << endl;
+	hub.insert(p2);
+	hub.insert(p3);
+	cout << "this shoul be 0: " << hub.isEmpty() << endl;
+	hub.makeNull();
+	cout << "this shoul be 1: " << hub.isEmpty() << endl;
     
 	return 0;
 }
