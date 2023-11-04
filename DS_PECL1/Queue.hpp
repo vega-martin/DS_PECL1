@@ -24,11 +24,11 @@ public:
 
     Queue();
     
-    void insert(Package);
+    void insert(const Package &newPackage);
     Package extract();
-    bool isEmpty();
+    bool isEmpty() const;
     void makeNull();
-    Package getFront();
+    Package getFront() const;
 
 };
 
