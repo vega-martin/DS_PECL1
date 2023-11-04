@@ -52,14 +52,25 @@ Label::Coords Package::generateCoordinates(){
 
 
 string Package::generateLabelId(const Label::Coords &coordinates){
+    
     srand(time(0));
+    
     int randNum = rand() % 1000;
-    // asegurrse de que tiene 3 cifras si o si
+    // Ensure it has 3 digits:    
     string formattedNumber = to_string(randNum);
     while (formattedNumber.length() < 3) {
         formattedNumber = "0" + formattedNumber;
     }
-    char randLetter = 65 + rand() % 91;
+    
+    // Array of English alphabet letters (capitalized)
+    char alphabet[] = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
+
+    // Generate a random index
+    int randomIndex = rand() % 26; // 26 letters in the array
+
+    // Get the random letter from the array
+    char randLetter = alphabet[randomIndex];
+    
     //obtener fecha
     time_t time = std::time(nullptr);
     tm *now = localtime(&time);

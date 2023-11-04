@@ -1,5 +1,6 @@
 #include <stdexcept>
 #include "Stack.hpp"
+using namespace std;
 
 Stack::Stack() {
     top = MAX_CAPACITY; // Initialize top to the maximum capacity
@@ -10,7 +11,7 @@ void Stack::insert(const Package &package) {
     if (top > 0) {
         elements[--top] = package;
     } else {
-        throw std::overflow_error("Stack is full!!!");
+        throw overflow_error("Stack is full!!!");
     }
 }
 
@@ -19,7 +20,7 @@ Package Stack::extract() {
     if (top < MAX_CAPACITY) {
         return elements[top++];
     } else {
-        throw std::underflow_error("Stack is empty!!!");
+        throw underflow_error("Stack is empty!!!");
     }
 }
 
