@@ -2,19 +2,32 @@
 #define STACK_HPP
 #include "Package.hpp"
 
-//template <typename T> //this way it works with any data type (just in case)
+// Esto es un comentario para ti Vega: el comentario largo siguiente es explicativo, lo podemos dejar si
+// te gusta como queda, o lo usamos en la memoria como explicación (o ambas cosas), salu2 y viva er beti
+
+/* THINGS TO TAKE INTO CONSIDERATION ABOUT THIS STACK IMPLEMENTATION:
+ * 
+ * STATIC / ARRAY IMPLEMENTATION: STACK SIZE WILL BE FIXED
+ * 
+ * AS SEEN IN THE THEORY LESSONS' SLIDES,
+ * 
+ * THE BOTTOM OF THE STACK IS ANCHORED AT THE BOTTOM OF THE ARRAY (HIGH-INDEXED END  -> MAX_CAPACITY)
+ * 
+ * AND THE STACK GROWS TOWARDS THE TOP OF TE ARRAY (LOW-INDEXED END -> 0)
+ */
 
 class Stack {
 
 private:
-    Package *elements;
-    int capacity; // max capacity of the stack
-    int top; // Inde of the top element of the stack
+
+    static const int MAX_CAPACITY = 24; // Vans' max capacity, established by the PDF
+    Package elements[MAX_CAPACITY]; // Static array for storing elements (packages)
+    int top; // Index of the top element of the stack
 
 public:
 
-    Stack(int capacity);
-    
+    Stack(); // No need to pass capacity as a parameter: its size is fixed
+
     void insert(const Package &package);
     Package extract();
     bool isEmpty() const;
@@ -24,3 +37,4 @@ public:
 };
 
 #endif // STACK_HPP
+

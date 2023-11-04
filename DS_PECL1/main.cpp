@@ -63,25 +63,6 @@ int main(){
     cout << "P2 client id: " << p2.getLabel().packageId << endl;
     
 	Package p3;
-	
-    cout << "\nStack class tester\n"<< endl;
-    
-	Stack van(4);
-	cout << "this shoul be 1: " << van.isEmpty() << endl;
-	van.insert(p1);//el error esta aqui
-	cout << "this shoul be 0: ";// << van.isEmpty() << endl;
-	cout << "this shoul be 0: ";// << van.isFull() << endl;
-	van.insert(p2);
-	van.insert(p3);
-	cout << "this shoul be 0: " << van.isEmpty() << endl;
-	cout << "this shoul be 1: " << van.isFull() << endl;
-	van.extract();
-	cout << "this shoul be 0: " << van.isEmpty() << endl;
-	cout << "this shoul be 0: " << van.isFull() << endl;
-	van.makeNull();
-	cout << "this shoul be 1: " << van.isEmpty() << endl;
-	cout << "this shoul be 0: " << van.isFull() << endl;
-    
     
 	return 0;
 }

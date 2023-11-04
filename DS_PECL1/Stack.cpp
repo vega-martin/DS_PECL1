@@ -1,42 +1,39 @@
-//#include <iostream>
 #include <stdexcept>
 #include "Stack.hpp"
 
-
-Stack::Stack(int capacity){
-    this->capacity = capacity;
-    elements = new Package[capacity];
-    top = capacity + 1; 
+Stack::Stack() {
+    top = MAX_CAPACITY; // Initialize top to the maximum capacity
 }
 
-// Function to insert elements in the Stack
-void Stack::insert(const Package &value){ // access the value by reference and make it read only with "const"
-    if (top > 1){
-        top--;
-        elements[top] = value;
+// Method to insert elements in the stack = PUSH
+void Stack::insert(const Package &package) {
+    if (top > 0) {
+        elements[--top] = package;
     } else {
         throw std::overflow_error("Stack is full!!!");
     }
 }
 
-// Function to pop an element from the Stack (LIFO)
-Package Stack::extract(){
-    if(top <= capacity){
-        return elements[top++]; //devuelve data[top] y luego top++
+// Method to remove an element from the Stack = POP
+Package Stack::extract() {
+    if (top < MAX_CAPACITY) {
+        return elements[top++];
     } else {
         throw std::underflow_error("Stack is empty!!!");
     }
 }
 
-// Function to determinte if the Stack is empty
+//Method that checks whether a stack is empty:
 bool Stack::isEmpty() const {
-    return (top >= capacity) ? true : false; // if top equal o greater than capacity retuns true else return false
+    return (top == MAX_CAPACITY);
 }
 
+// Method that checks whether a stack is full:
 bool Stack::isFull() const {
-    return (top == 1) ? true : false; // if top equals to 1 retuns true (it is full) else return false
+    return (top == 0);
 }
 
-void Stack::makeNull(){
-    top = capacity + 1;
+// Method that empties a stack:
+void Stack::makeNull() {
+    top = MAX_CAPACITY;
 }
