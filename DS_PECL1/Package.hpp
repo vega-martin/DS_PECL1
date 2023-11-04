@@ -3,27 +3,32 @@
 #include <string>
 using namespace std;
 
-enum Status {CentralStation, Hub, OnItsWay, Delivered}; // los diferentes estados en el q puede estar un paquete
+// An enumeration data type is used for the package's status:
+enum Status {CentralStation, Hub, OnItsWay, Delivered};
     
 struct Label {
     string packageId;
     string clientId;
-    // struct de coordenadas dfeinido en e struct de label
+	// Coordinates struct defined inside Label struct:
     struct Coords {
-        string latitude; // latitud formato __ __ __
-        string longitude; // longitud formato __ __ __
-        char hub[2]; // zona de las coordenadas (SW,SE,NW,NE)
+        string latitude; // __ __ __ format
+        string longitude; // __ __ __ format
+        char hub[2]; // Coords' geographical zone (SW, SE, NW, NE)
     } coordinates;
 };
 
 class Package {
 private:
-
+    
     Status status;
     Label label;
     
     //no se muy bn por que pero al precer esto va aqui
     //creo q es porque así solo se usan dentro del constructor y no en el main()
+    
+    /* EFECTIVAMENTE, LAS SIGUIENTES FUNCIONES VAN AQUÍ PORQUE SON PRIVADAS PARA ESTA CLASE, NO LAS 
+     * QUEREMOS USAR EN NINGÚN OTRO SITIO FUERA, YA QUE SON GENERADORAS DE INFORMACIÓN (DE DATOS) */
+     
     string generateClientId();
     Label::Coords generateCoordinates();
     string generateLabelId(const Label::Coords &coordinates);
@@ -33,10 +38,8 @@ public:
     Package();
     
     Status getStatus();
-	void setStatus(Status newStatus);
-    Label getLabel(); //no se si lo vamos a necesitar
-    
-    
+    void setStatus(Status newStatus);
+    Label getLabel(); // May not be needed  
 
 };
 

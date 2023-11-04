@@ -5,7 +5,7 @@
 using namespace std;
 
 Label::Coords Package::generateCoordinates(){
-    //generate random coordinates
+    // Generate random coordinates:
     random_device rn;
     mt19937 gen(rn());
     //latidud entre 41.070998 y 40.854057
@@ -78,7 +78,7 @@ string Package::generateClientId(){
     mt19937 gen(rn1()); // genera la semilla por asi decirlo
     uniform_int_distribution<int> distribution(10000000, 99999999); //8cifras
     int idNum = distribution(gen);
-    char letter[23] = {'T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E'};
+    char letter[23] = {'T','R','W','A','G','M','Y','F','P','D','X','B','N','J','Z','S','Q','V','H','L','C','K','E'};
     int mod = idNum % 23;
     char idLetter = letter[mod];
     string clientId = to_string(idNum) + idLetter;
