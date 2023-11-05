@@ -6,19 +6,19 @@
 ProjectName            :=DS_PECL1
 ConfigurationName      :=Debug
 WorkspaceConfiguration :=Debug
-WorkspacePath          :=C:/DataStructure/PECL1/DS_PECL1
-ProjectPath            :=C:/DataStructure/PECL1/DS_PECL1/DS_PECL1
+WorkspacePath          :=C:/DS_PECL1
+ProjectPath            :=C:/DS_PECL1/DS_PECL1
 IntermediateDirectory  :=../build-$(WorkspaceConfiguration)/DS_PECL1
 OutDir                 :=$(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
-User                   :=Vega
+User                   :=lublu
 Date                   :=11/5/2023
 CodeLitePath           :="C:/Program Files/CodeLite"
 MakeDirCommand         :=mkdir
-LinkerName             :=C:/msys64/clang64/bin/clang++.exe
-SharedObjectLinkerName :=C:/msys64/clang64/bin/clang++.exe -shared -fPIC
+LinkerName             :=C:/msys64/clang64/bin/g++.exe
+SharedObjectLinkerName :=C:/msys64/clang64/bin/g++.exe -shared -fPIC
 ObjectSuffix           :=.o
 DependSuffix           :=
 PreprocessSuffix       :=.i
@@ -29,7 +29,7 @@ OutputSwitch           :=-o
 LibraryPathSwitch      :=-L
 PreprocessorSwitch     :=-D
 SourceSwitch           :=-c 
-OutputDirectory        :=C:/DataStructure/PECL1/DS_PECL1/build-$(WorkspaceConfiguration)/bin
+OutputDirectory        :=C:/DS_PECL1/build-$(WorkspaceConfiguration)/bin
 OutputFile             :=..\build-$(WorkspaceConfiguration)\bin\$(ProjectName).exe
 Preprocessors          :=
 ObjectSwitch           :=-o 
@@ -40,7 +40,7 @@ PCHCompileFlags        :=
 RcCmpOptions           := 
 RcCompilerName         :=C:/msys64/clang64/bin/windres.exe
 LinkOptions            :=  
-IncludePath            := $(IncludeSwitch)C:\msys64\clang64\include\c++\v1 $(IncludeSwitch)C:\msys64\clang64\lib\clang\17\include $(IncludeSwitch)C:\msys64\clang64\include  $(IncludeSwitch). $(IncludeSwitch). 
+IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch). 
 IncludePCH             := 
 RcIncludePath          := 
 Libs                   := 
@@ -52,8 +52,8 @@ LibPath                := $(LibraryPathSwitch).
 ## AR, CXX, CC, AS, CXXFLAGS and CFLAGS can be overridden using an environment variable
 ##
 AR       := C:/msys64/clang64/bin/ar.exe -r
-CXX      := C:/msys64/clang64/bin/clang++.exe
-CC       := C:/msys64/clang64/bin/clang.exe
+CXX      := C:/msys64/clang64/bin/g++.exe
+CC       := C:/msys64/clang64/bin/gcc.exe
 CXXFLAGS :=  -gdwarf-2 -O0 -Wall $(Preprocessors)
 CFLAGS   :=  -gdwarf-2 -O0 -Wall $(Preprocessors)
 ASFLAGS  := 
@@ -64,7 +64,7 @@ AS       := C:/msys64/clang64/bin/as.exe
 ## User defined environment variables
 ##
 CodeLiteDir:=C:\Program Files\CodeLite
-Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/Package.cpp$(ObjectSuffix) $(IntermediateDirectory)/Queue.cpp$(ObjectSuffix) $(IntermediateDirectory)/Stack.cpp$(ObjectSuffix) $(IntermediateDirectory)/Randomize.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/Package.cpp$(ObjectSuffix) $(IntermediateDirectory)/Randomize.cpp$(ObjectSuffix) $(IntermediateDirectory)/Stack.cpp$(ObjectSuffix) $(IntermediateDirectory)/Queue.cpp$(ObjectSuffix) 
 
 
 
@@ -96,29 +96,29 @@ PreBuild:
 ## Objects
 ##
 $(IntermediateDirectory)/main.cpp$(ObjectSuffix): main.cpp 
-	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/DataStructure/PECL1/DS_PECL1/DS_PECL1/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/DS_PECL1/DS_PECL1/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/main.cpp$(PreprocessSuffix): main.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.cpp$(PreprocessSuffix) main.cpp
 
 $(IntermediateDirectory)/Package.cpp$(ObjectSuffix): Package.cpp 
-	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/DataStructure/PECL1/DS_PECL1/DS_PECL1/Package.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Package.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/DS_PECL1/DS_PECL1/Package.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Package.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/Package.cpp$(PreprocessSuffix): Package.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Package.cpp$(PreprocessSuffix) Package.cpp
 
-$(IntermediateDirectory)/Queue.cpp$(ObjectSuffix): Queue.cpp 
-	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/DataStructure/PECL1/DS_PECL1/DS_PECL1/Queue.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Queue.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/Queue.cpp$(PreprocessSuffix): Queue.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Queue.cpp$(PreprocessSuffix) Queue.cpp
+$(IntermediateDirectory)/Randomize.cpp$(ObjectSuffix): Randomize.cpp 
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/DS_PECL1/DS_PECL1/Randomize.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Randomize.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/Randomize.cpp$(PreprocessSuffix): Randomize.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Randomize.cpp$(PreprocessSuffix) Randomize.cpp
 
 $(IntermediateDirectory)/Stack.cpp$(ObjectSuffix): Stack.cpp 
-	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/DataStructure/PECL1/DS_PECL1/DS_PECL1/Stack.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Stack.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/DS_PECL1/DS_PECL1/Stack.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Stack.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/Stack.cpp$(PreprocessSuffix): Stack.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Stack.cpp$(PreprocessSuffix) Stack.cpp
 
-$(IntermediateDirectory)/Randomize.cpp$(ObjectSuffix): Randomize.cpp 
-	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/DataStructure/PECL1/DS_PECL1/DS_PECL1/Randomize.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Randomize.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/Randomize.cpp$(PreprocessSuffix): Randomize.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Randomize.cpp$(PreprocessSuffix) Randomize.cpp
+$(IntermediateDirectory)/Queue.cpp$(ObjectSuffix): Queue.cpp 
+	$(CXX) $(IncludePCH) $(SourceSwitch) "C:/DS_PECL1/DS_PECL1/Queue.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/Queue.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/Queue.cpp$(PreprocessSuffix): Queue.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/Queue.cpp$(PreprocessSuffix) Queue.cpp
 
 ##
 ## Clean
