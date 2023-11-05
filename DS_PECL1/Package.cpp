@@ -1,14 +1,16 @@
-#include <iostream>
 #include <ctime>
 #include <random>
 #include "Package.hpp"
 using namespace std;
 
-std::random_device global_rd;
+//std::random_device global_rd;
+
+//thread_local std::random_device Package::rd;
+thread_local std::mt19937 Package::gen(std::random_device{}());
 
 Label::Coords Package::generateCoordinates(){
     // Generate random coordinates:
-    mt19937 gen(global_rd());
+    //mt19937 gen(global_rd());
     //latidud entre 41.070998 y 40.854057
     uniform_real_distribution<double> distributionLat(40.854057, 41.070999);
     double lat = distributionLat(gen); 
@@ -43,6 +45,7 @@ Label::Coords Package::generateCoordinates(){
             coordinates.hub[1] = 'W';
         }
     }
+	coordinates.hub[2] = '\0'; //apparently this char is considered a string when printed so it needs a closing character
     // poner formato a las coordenadas
     coordinates.latitude = to_string(latD) + " " + to_string(latM) + " " + to_string(latS);
     coordinates.longitude = to_string(lonD) + " " + to_string(lonM) + " " + to_string(lonS);
@@ -53,7 +56,7 @@ Label::Coords Package::generateCoordinates(){
 
 
 string Package::generateLabelId(const Label::Coords &coordinates) {
-    mt19937 gen(global_rd());
+    //mt19937 gen(global_rd());
     uniform_int_distribution<int> distribution(0, 25); // 26 letters in the array
 
     // Get the random index from the distribution
@@ -90,7 +93,7 @@ string Package::generateLabelId(const Label::Coords &coordinates) {
 
 
 string Package::generateClientId(){
-    mt19937 gen(global_rd());
+    //mt19937 gen(global_rd());
     uniform_int_distribution<int> distribution(10000000, 99999999); //8cifras
     int idNum = distribution(gen);
     char letter[23] = {'T','R','W','A','G','M','Y','F','P','D','X','B','N','J','Z','S','Q','V','H','L','C','K','E'};
@@ -103,8 +106,8 @@ string Package::generateClientId(){
 
 
 Package::Package(){
-    
-    mt19937 gen(global_rd());
+	
+    //mt19937 gen(global_rd());
     //first status recorded ?
     status = Status::CentralStation;
     

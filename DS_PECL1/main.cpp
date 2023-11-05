@@ -75,5 +75,16 @@ int main(){
 	hub.makeNull();
 	cout << "this shoul be 1: " << hub.isEmpty() << endl;
     
+	
+	Queue central;
+	//no consigo hacer q gereneren los valores distintos...
+	//he cambiado cosas en la clase Package de lo del random por si queires mirarlo
+	cout << "\ncreating loads of packages\n" << endl;
+	for(int i = 0; i < 35; i++){
+		Package p;
+		central.insert(p);
+		cout << central.getFront().getLabel().coordinates.hub << ", " << central.getFront().getLabel().packageId << ", " << central.getFront().getLabel().clientId << endl;
+	};
+	
 	return 0;
 }
