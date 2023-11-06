@@ -45,6 +45,7 @@ void mainMenu(Central c, Stack nw, Stack ne, Stack sw, Stack se){
 				cout << "Good bye!" << endl;
 				break;
 			default:
+                system("cls");
 				cout << "Invalid choice"<< endl;
 				break;
 		}
@@ -72,16 +73,16 @@ void showMenu(Central c, Stack nw, Stack ne, Stack sw, Stack se){
 				showCentralStation(c);
 				break;
 			case 2:
-				//showHub(nw);
+				showHub(nw);
 				break;
 			case 3:
-				//showHub(ne);
+				showHub(ne);
 				break;
 			case 4:
-				//showHub(sw);
+				showHub(sw);
 				break;
 			case 5:
-				//showHub(se);
+				showHub(se);
 				break;
 			case 6:
 				break;
@@ -116,7 +117,7 @@ void showCentralStation(Central central){
 
 
 
-/*void showHub(Stack hub){
+void showHub(Stack hub){
 	if(!hub.isEmpty()){
 		for(int i = hub.top ; i < 24 + 1; i++){
 			cout << std::setw(11) << "Package id:" << setw(17) << hub.elements[i].getLabel().packageId <<
@@ -129,7 +130,7 @@ void showCentralStation(Central central){
 	}  else {
 		cout << "UPPS! There's nothing to show over here." << endl;
 	}
-}*/
+}
 
 
 

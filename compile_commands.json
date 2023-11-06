@@ -1,53 +1,53 @@
 [{
-  "file": "C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1\\main.cpp",
-  "directory": "C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1",
-  "command": "C:/msys64/clang64/bin/clang++.exe -c C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1\\main.cpp -o C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1\\main.cpp.o -target x86_64-w64-windows-gnu -IC:\\msys64\\clang64\\include\\c++\\v1 -IC:\\msys64\\clang64\\lib\\clang\\17\\include -IC:\\msys64\\clang64\\include -IC:\\msys64\\clang64\\include\\c++\\v1 -IC:\\msys64\\clang64\\lib\\clang\\17\\include -IC:\\msys64\\clang64\\include -I. -I.  -gdwarf-2  -O0  -Wall"
+  "file": "C:\\DS_PECL1\\DS_PECL1\\main.cpp",
+  "directory": "C:\\DS_PECL1\\DS_PECL1",
+  "command": "C:/msys64/clang64/bin/g++.exe -c C:\\DS_PECL1\\DS_PECL1\\main.cpp -o C:\\DS_PECL1\\DS_PECL1\\main.cpp.o -target x86_64-w64-windows-gnu -IC:\\msys64\\clang64\\include\\c++\\v1 -IC:\\msys64\\clang64\\lib\\clang\\17\\include -IC:\\msys64\\clang64\\include -I. -I.  -gdwarf-2  -O0  -Wall"
  }, {
-  "file": "C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1\\Package.cpp",
-  "directory": "C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1",
-  "command": "C:/msys64/clang64/bin/clang++.exe -c C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1\\Package.cpp -o C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1\\Package.cpp.o -target x86_64-w64-windows-gnu -IC:\\msys64\\clang64\\include\\c++\\v1 -IC:\\msys64\\clang64\\lib\\clang\\17\\include -IC:\\msys64\\clang64\\include -IC:\\msys64\\clang64\\include\\c++\\v1 -IC:\\msys64\\clang64\\lib\\clang\\17\\include -IC:\\msys64\\clang64\\include -I. -I.  -gdwarf-2  -O0  -Wall"
+  "file": "C:\\DS_PECL1\\DS_PECL1\\Randomize.cpp",
+  "directory": "C:\\DS_PECL1\\DS_PECL1",
+  "command": "C:/msys64/clang64/bin/g++.exe -c C:\\DS_PECL1\\DS_PECL1\\Randomize.cpp -o C:\\DS_PECL1\\DS_PECL1\\Randomize.cpp.o -target x86_64-w64-windows-gnu -IC:\\msys64\\clang64\\include\\c++\\v1 -IC:\\msys64\\clang64\\lib\\clang\\17\\include -IC:\\msys64\\clang64\\include -I. -I.  -gdwarf-2  -O0  -Wall"
  }, {
-  "file": "C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1\\Randomize.cpp",
-  "directory": "C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1",
-  "command": "C:/msys64/clang64/bin/clang++.exe -c C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1\\Randomize.cpp -o C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1\\Randomize.cpp.o -target x86_64-w64-windows-gnu -IC:\\msys64\\clang64\\include\\c++\\v1 -IC:\\msys64\\clang64\\lib\\clang\\17\\include -IC:\\msys64\\clang64\\include -IC:\\msys64\\clang64\\include\\c++\\v1 -IC:\\msys64\\clang64\\lib\\clang\\17\\include -IC:\\msys64\\clang64\\include -I. -I.  -gdwarf-2  -O0  -Wall"
+  "file": "C:\\DS_PECL1\\DS_PECL1\\Stack.hpp",
+  "directory": "C:\\DS_PECL1\\DS_PECL1",
+  "command": "C:/msys64/clang64/bin/g++.exe -c C:\\DS_PECL1\\DS_PECL1\\Stack.hpp -o C:\\DS_PECL1\\DS_PECL1\\Stack.hpp.o -target x86_64-w64-windows-gnu -IC:\\msys64\\clang64\\include\\c++\\v1 -IC:\\msys64\\clang64\\lib\\clang\\17\\include -IC:\\msys64\\clang64\\include -I. -I.  -gdwarf-2  -O0  -Wall"
  }, {
-  "file": "C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1\\Randomize.hpp",
-  "directory": "C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1",
-  "command": "C:/msys64/clang64/bin/clang++.exe -c C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1\\Randomize.hpp -o C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1\\Randomize.hpp.o -target x86_64-w64-windows-gnu -IC:\\msys64\\clang64\\include\\c++\\v1 -IC:\\msys64\\clang64\\lib\\clang\\17\\include -IC:\\msys64\\clang64\\include -IC:\\msys64\\clang64\\include\\c++\\v1 -IC:\\msys64\\clang64\\lib\\clang\\17\\include -IC:\\msys64\\clang64\\include -I. -I.  -gdwarf-2  -O0  -Wall"
+  "file": "C:\\DS_PECL1\\DS_PECL1\\Central.hpp",
+  "directory": "C:\\DS_PECL1\\DS_PECL1",
+  "command": "C:/msys64/clang64/bin/g++.exe -c C:\\DS_PECL1\\DS_PECL1\\Central.hpp -o C:\\DS_PECL1\\DS_PECL1\\Central.hpp.o -target x86_64-w64-windows-gnu -IC:\\msys64\\clang64\\include\\c++\\v1 -IC:\\msys64\\clang64\\lib\\clang\\17\\include -IC:\\msys64\\clang64\\include -I. -I.  -gdwarf-2  -O0  -Wall"
  }, {
-  "file": "C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1\\Stack.hpp",
-  "directory": "C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1",
-  "command": "C:/msys64/clang64/bin/clang++.exe -c C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1\\Stack.hpp -o C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1\\Stack.hpp.o -target x86_64-w64-windows-gnu -IC:\\msys64\\clang64\\include\\c++\\v1 -IC:\\msys64\\clang64\\lib\\clang\\17\\include -IC:\\msys64\\clang64\\include -IC:\\msys64\\clang64\\include\\c++\\v1 -IC:\\msys64\\clang64\\lib\\clang\\17\\include -IC:\\msys64\\clang64\\include -I. -I.  -gdwarf-2  -O0  -Wall"
+  "file": "C:\\DS_PECL1\\DS_PECL1\\Stack.cpp",
+  "directory": "C:\\DS_PECL1\\DS_PECL1",
+  "command": "C:/msys64/clang64/bin/g++.exe -c C:\\DS_PECL1\\DS_PECL1\\Stack.cpp -o C:\\DS_PECL1\\DS_PECL1\\Stack.cpp.o -target x86_64-w64-windows-gnu -IC:\\msys64\\clang64\\include\\c++\\v1 -IC:\\msys64\\clang64\\lib\\clang\\17\\include -IC:\\msys64\\clang64\\include -I. -I.  -gdwarf-2  -O0  -Wall"
  }, {
-  "file": "C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1\\Package.hpp",
-  "directory": "C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1",
-  "command": "C:/msys64/clang64/bin/clang++.exe -c C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1\\Package.hpp -o C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1\\Package.hpp.o -target x86_64-w64-windows-gnu -IC:\\msys64\\clang64\\include\\c++\\v1 -IC:\\msys64\\clang64\\lib\\clang\\17\\include -IC:\\msys64\\clang64\\include -IC:\\msys64\\clang64\\include\\c++\\v1 -IC:\\msys64\\clang64\\lib\\clang\\17\\include -IC:\\msys64\\clang64\\include -I. -I.  -gdwarf-2  -O0  -Wall"
+  "file": "C:\\DS_PECL1\\DS_PECL1\\Queue.hpp",
+  "directory": "C:\\DS_PECL1\\DS_PECL1",
+  "command": "C:/msys64/clang64/bin/g++.exe -c C:\\DS_PECL1\\DS_PECL1\\Queue.hpp -o C:\\DS_PECL1\\DS_PECL1\\Queue.hpp.o -target x86_64-w64-windows-gnu -IC:\\msys64\\clang64\\include\\c++\\v1 -IC:\\msys64\\clang64\\lib\\clang\\17\\include -IC:\\msys64\\clang64\\include -I. -I.  -gdwarf-2  -O0  -Wall"
  }, {
-  "file": "C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1\\Stack.cpp",
-  "directory": "C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1",
-  "command": "C:/msys64/clang64/bin/clang++.exe -c C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1\\Stack.cpp -o C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1\\Stack.cpp.o -target x86_64-w64-windows-gnu -IC:\\msys64\\clang64\\include\\c++\\v1 -IC:\\msys64\\clang64\\lib\\clang\\17\\include -IC:\\msys64\\clang64\\include -IC:\\msys64\\clang64\\include\\c++\\v1 -IC:\\msys64\\clang64\\lib\\clang\\17\\include -IC:\\msys64\\clang64\\include -I. -I.  -gdwarf-2  -O0  -Wall"
+  "file": "C:\\DS_PECL1\\DS_PECL1\\Show.cpp",
+  "directory": "C:\\DS_PECL1\\DS_PECL1",
+  "command": "C:/msys64/clang64/bin/g++.exe -c C:\\DS_PECL1\\DS_PECL1\\Show.cpp -o C:\\DS_PECL1\\DS_PECL1\\Show.cpp.o -target x86_64-w64-windows-gnu -IC:\\msys64\\clang64\\include\\c++\\v1 -IC:\\msys64\\clang64\\lib\\clang\\17\\include -IC:\\msys64\\clang64\\include -I. -I.  -gdwarf-2  -O0  -Wall"
  }, {
-  "file": "C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1\\Queue.cpp",
-  "directory": "C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1",
-  "command": "C:/msys64/clang64/bin/clang++.exe -c C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1\\Queue.cpp -o C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1\\Queue.cpp.o -target x86_64-w64-windows-gnu -IC:\\msys64\\clang64\\include\\c++\\v1 -IC:\\msys64\\clang64\\lib\\clang\\17\\include -IC:\\msys64\\clang64\\include -IC:\\msys64\\clang64\\include\\c++\\v1 -IC:\\msys64\\clang64\\lib\\clang\\17\\include -IC:\\msys64\\clang64\\include -I. -I.  -gdwarf-2  -O0  -Wall"
+  "file": "C:\\DS_PECL1\\DS_PECL1\\Queue.cpp",
+  "directory": "C:\\DS_PECL1\\DS_PECL1",
+  "command": "C:/msys64/clang64/bin/g++.exe -c C:\\DS_PECL1\\DS_PECL1\\Queue.cpp -o C:\\DS_PECL1\\DS_PECL1\\Queue.cpp.o -target x86_64-w64-windows-gnu -IC:\\msys64\\clang64\\include\\c++\\v1 -IC:\\msys64\\clang64\\lib\\clang\\17\\include -IC:\\msys64\\clang64\\include -I. -I.  -gdwarf-2  -O0  -Wall"
  }, {
-  "file": "C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1\\Central.hpp",
-  "directory": "C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1",
-  "command": "C:/msys64/clang64/bin/clang++.exe -c C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1\\Central.hpp -o C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1\\Central.hpp.o -target x86_64-w64-windows-gnu -IC:\\msys64\\clang64\\include\\c++\\v1 -IC:\\msys64\\clang64\\lib\\clang\\17\\include -IC:\\msys64\\clang64\\include -IC:\\msys64\\clang64\\include\\c++\\v1 -IC:\\msys64\\clang64\\lib\\clang\\17\\include -IC:\\msys64\\clang64\\include -I. -I.  -gdwarf-2  -O0  -Wall"
+  "file": "C:\\DS_PECL1\\DS_PECL1\\Package.hpp",
+  "directory": "C:\\DS_PECL1\\DS_PECL1",
+  "command": "C:/msys64/clang64/bin/g++.exe -c C:\\DS_PECL1\\DS_PECL1\\Package.hpp -o C:\\DS_PECL1\\DS_PECL1\\Package.hpp.o -target x86_64-w64-windows-gnu -IC:\\msys64\\clang64\\include\\c++\\v1 -IC:\\msys64\\clang64\\lib\\clang\\17\\include -IC:\\msys64\\clang64\\include -I. -I.  -gdwarf-2  -O0  -Wall"
  }, {
-  "file": "C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1\\Central.cpp",
-  "directory": "C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1",
-  "command": "C:/msys64/clang64/bin/clang++.exe -c C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1\\Central.cpp -o C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1\\Central.cpp.o -target x86_64-w64-windows-gnu -IC:\\msys64\\clang64\\include\\c++\\v1 -IC:\\msys64\\clang64\\lib\\clang\\17\\include -IC:\\msys64\\clang64\\include -IC:\\msys64\\clang64\\include\\c++\\v1 -IC:\\msys64\\clang64\\lib\\clang\\17\\include -IC:\\msys64\\clang64\\include -I. -I.  -gdwarf-2  -O0  -Wall"
+  "file": "C:\\DS_PECL1\\DS_PECL1\\Central.cpp",
+  "directory": "C:\\DS_PECL1\\DS_PECL1",
+  "command": "C:/msys64/clang64/bin/g++.exe -c C:\\DS_PECL1\\DS_PECL1\\Central.cpp -o C:\\DS_PECL1\\DS_PECL1\\Central.cpp.o -target x86_64-w64-windows-gnu -IC:\\msys64\\clang64\\include\\c++\\v1 -IC:\\msys64\\clang64\\lib\\clang\\17\\include -IC:\\msys64\\clang64\\include -I. -I.  -gdwarf-2  -O0  -Wall"
  }, {
-  "file": "C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1\\Queue.hpp",
-  "directory": "C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1",
-  "command": "C:/msys64/clang64/bin/clang++.exe -c C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1\\Queue.hpp -o C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1\\Queue.hpp.o -target x86_64-w64-windows-gnu -IC:\\msys64\\clang64\\include\\c++\\v1 -IC:\\msys64\\clang64\\lib\\clang\\17\\include -IC:\\msys64\\clang64\\include -IC:\\msys64\\clang64\\include\\c++\\v1 -IC:\\msys64\\clang64\\lib\\clang\\17\\include -IC:\\msys64\\clang64\\include -I. -I.  -gdwarf-2  -O0  -Wall"
+  "file": "C:\\DS_PECL1\\DS_PECL1\\Package.cpp",
+  "directory": "C:\\DS_PECL1\\DS_PECL1",
+  "command": "C:/msys64/clang64/bin/g++.exe -c C:\\DS_PECL1\\DS_PECL1\\Package.cpp -o C:\\DS_PECL1\\DS_PECL1\\Package.cpp.o -target x86_64-w64-windows-gnu -IC:\\msys64\\clang64\\include\\c++\\v1 -IC:\\msys64\\clang64\\lib\\clang\\17\\include -IC:\\msys64\\clang64\\include -I. -I.  -gdwarf-2  -O0  -Wall"
  }, {
-  "file": "C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1\\Show.hpp",
-  "directory": "C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1",
-  "command": "C:/msys64/clang64/bin/clang++.exe -c C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1\\Show.hpp -o C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1\\Show.hpp.o -target x86_64-w64-windows-gnu -IC:\\msys64\\clang64\\include\\c++\\v1 -IC:\\msys64\\clang64\\lib\\clang\\17\\include -IC:\\msys64\\clang64\\include -IC:\\msys64\\clang64\\include\\c++\\v1 -IC:\\msys64\\clang64\\lib\\clang\\17\\include -IC:\\msys64\\clang64\\include -I. -I.  -gdwarf-2  -O0  -Wall"
+  "file": "C:\\DS_PECL1\\DS_PECL1\\Randomize.hpp",
+  "directory": "C:\\DS_PECL1\\DS_PECL1",
+  "command": "C:/msys64/clang64/bin/g++.exe -c C:\\DS_PECL1\\DS_PECL1\\Randomize.hpp -o C:\\DS_PECL1\\DS_PECL1\\Randomize.hpp.o -target x86_64-w64-windows-gnu -IC:\\msys64\\clang64\\include\\c++\\v1 -IC:\\msys64\\clang64\\lib\\clang\\17\\include -IC:\\msys64\\clang64\\include -I. -I.  -gdwarf-2  -O0  -Wall"
  }, {
-  "file": "C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1\\Show.cpp",
-  "directory": "C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1",
-  "command": "C:/msys64/clang64/bin/clang++.exe -c C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1\\Show.cpp -o C:\\DataStructure\\PECL1\\DS_PECL1\\DS_PECL1\\Show.cpp.o -target x86_64-w64-windows-gnu -IC:\\msys64\\clang64\\include\\c++\\v1 -IC:\\msys64\\clang64\\lib\\clang\\17\\include -IC:\\msys64\\clang64\\include -IC:\\msys64\\clang64\\include\\c++\\v1 -IC:\\msys64\\clang64\\lib\\clang\\17\\include -IC:\\msys64\\clang64\\include -I. -I.  -gdwarf-2  -O0  -Wall"
+  "file": "C:\\DS_PECL1\\DS_PECL1\\Show.hpp",
+  "directory": "C:\\DS_PECL1\\DS_PECL1",
+  "command": "C:/msys64/clang64/bin/g++.exe -c C:\\DS_PECL1\\DS_PECL1\\Show.hpp -o C:\\DS_PECL1\\DS_PECL1\\Show.hpp.o -target x86_64-w64-windows-gnu -IC:\\msys64\\clang64\\include\\c++\\v1 -IC:\\msys64\\clang64\\lib\\clang\\17\\include -IC:\\msys64\\clang64\\include -I. -I.  -gdwarf-2  -O0  -Wall"
  }]

@@ -77,6 +77,10 @@ int main(){
 	Stack NEHub;
 	Stack SWHub;
 	Stack SEHub;
+    NWHub.makeNull();
+    NEHub.makeNull();
+    SWHub.makeNull();
+    SEHub.makeNull();
 	
 	mainMenu(central, NWHub, NEHub, SWHub, SEHub); // In Show.hpp and Show.cpp
 	return 0;

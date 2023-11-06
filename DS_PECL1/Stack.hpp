@@ -20,13 +20,13 @@ class Stack {
 private:
 
     static const int MAX_CAPACITY = 24; // Vans' max capacity, established by the PDF
-    Package elements[MAX_CAPACITY]; // Static array for storing elements (packages)
-    int top; // Index of the top element of the stack
+    
 
 public:
 
-	
-	
+    Package elements[MAX_CAPACITY]; // Static array for storing elements (packages)
+    int top; // Index of the top element of the stack
+
     Stack(); // No need to pass capacity as a parameter: its size is fixed
 
     void insert(const Package &package);
