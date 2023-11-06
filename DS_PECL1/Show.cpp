@@ -1,11 +1,19 @@
 #include "Show.hpp"
 #include "Central.hpp"
 #include "Stack.hpp"
+#include "Main.cpp"
 #include <iostream>
 #include <iomanip>
 using namespace std;
 
-void mainMenu(Central c, Stack nw, Stack ne, Stack sw, Stack se){
+void emptyFilledHub(Stack& hub, Queue& hubQueue) {
+    while (!hub.isEmpty()) {
+        hub.elements[hub.top].setStatus(Delivered);
+        hubQueue.insert(hub.extract());  
+    }
+}
+
+void mainMenu(Central c, Stack nw, Stack ne, Stack sw, Stack se, Queue nwq, Queue neq, Queue swq, Queue seq){
 	int action;
 	
 	cout << std::setw(100) << "-------------------------------------   WELCOME TO THE PARCEL SERVICE SIMULATOR   -------------------------------------" << endl;
@@ -25,12 +33,12 @@ void mainMenu(Central c, Stack nw, Stack ne, Stack sw, Stack se){
 			case 1:
 				//falta codigo codigo para esta parte
 				break;
-			case 2:
-				//hacemos otro menu? para elegir de donde quieres ver los paquetes si de la estacion cental o de los hubs.
-				//al final lo he hecho xd
-				showMenu(c, nw, ne, sw, se);
-				break;
-			case 3:
+                
+            case 2:
+                showMenu(c, nw, ne, sw, se);
+                break;
+                
+            case 3:
 				//no lo he pensado muy bn xddd
 				/*supongo q aqui puedo llamar al metodo/s para distribuir los
 				 * paquetes desde la central. y si algun hub tiene 24 paquetes
@@ -40,6 +48,10 @@ void mainMenu(Central c, Stack nw, Stack ne, Stack sw, Stack se){
 				  * 2º vaciar el hub q este lleno (así la 1ª no hace nada)
 				  * 3º sacar lo 73 paquetes de la central y llevarlos  los hubs correspondientes
 				  * creo q es una buena lógica no?...ahora solo falta implementarla xd*/
+                  
+                if (nw.isFull())
+                    emptyFilledHub(nw, nwq);
+                
 				break;
 			case 4:
 				cout << "Good bye!" << endl;
@@ -137,3 +149,7 @@ void showHub(Stack hub){
 void showPackage(){
 	
 }
+
+
+
+
