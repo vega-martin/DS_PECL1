@@ -2,6 +2,8 @@
 #define STACK_HPP
 #include "Package.hpp"
 
+//#define N3 24
+
 /* THINGS TO TAKE INTO CONSIDERATION ABOUT THIS STACK IMPLEMENTATION:
  * 
  * STATIC / ARRAY IMPLEMENTATION: STACK SIZE WILL BE FIXED
@@ -23,6 +25,8 @@ private:
 
 public:
 
+	
+	
     Stack(); // No need to pass capacity as a parameter: its size is fixed
 
     void insert(const Package &package);

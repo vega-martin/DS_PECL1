@@ -1,14 +1,12 @@
-#include <iostream>
-#include "Package.hpp"
-#include "Queue.hpp"
+#include "Stack.hpp"
 #include "Central.hpp"
 #include "Show.hpp"
 using namespace std;
 
 int main(){
     
-	cout << "Yeah, it compiled!\n"<< endl;
-    
+	//cout << "Yeah, it compiled!\n"<< endl;
+    /*
     cout << "Package class tester\n"<< endl;
     
     //std::random_device rd;
@@ -70,9 +68,16 @@ int main(){
     
 	cout << "\ncreating loads of packages\n" << endl;
 	
-	Central centralStation;
+	Central centralStation;*/
 	//centralStation.sendToHub();
-	showCentralStation(centralStation);
+	//showCentralStation(centralStation);
 	
+	Central central; // In Central.hpp and Central.cpp
+	Stack NWHub; // In Stack.hpp and Stack.cpp
+	Stack NEHub;
+	Stack SWHub;
+	Stack SEHub;
+	
+	mainMenu(central, NWHub, NEHub, SWHub, SEHub); // In Show.hpp and Show.cpp
 	return 0;
 }
