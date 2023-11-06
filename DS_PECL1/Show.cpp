@@ -33,9 +33,13 @@ void mainMenu(Central c, Stack nw, Stack ne, Stack sw, Stack se, Queue nwq, Queu
 		cin >> action;
 		cout << endl;
 		
+		string label;
 		switch(action){
 			case 1:
-				//falta codigo codigo para esta parte
+				cout << "Introduce the label of the package you are looking for:" << endl;
+				getline(cin >> ws, label);
+				cout << endl;
+				showPackage(label, c, nw, ne, sw, se, nwq, neq, swq, seq);
 				break;
                 
             case 2:
@@ -142,7 +146,7 @@ void showCentralStation(Central central){
 
 void showHub(Stack hub){
 	if(!hub.isEmpty()){
-		for(int i = hub.top ; i < 24 + 1; i++){
+		for(int i = hub.top ; i < N3 + 1; i++){
 			cout << std::setw(11) << "Package id:" << setw(17) << hub.elements[i].getLabel().packageId <<
 			setw(20) << "Package latitude:" << setw(12) << hub.elements[i].getLabel().coordinates.latitude <<
 			setw(22) << "Package longitude:" << setw(12) << hub.elements[i].getLabel().coordinates.longitude <<
@@ -157,10 +161,121 @@ void showHub(Stack hub){
 
 
 
-void showPackage(){
+void showPackage(string labelID, Central c, Stack nw, Stack ne, Stack sw, Stack se, Queue nwq, Queue neq, Queue swq, Queue seq){
 	
+	bool found = searchInCentral(labelID, c); // Check if it is in the Central Station
+	
+	if (found){
+		cout << "Your package is in the Central Station" << endl;
+	} else {
+		
+		if((labelID.substr(labelID.length() - 2)) == "NW") { // Check hub from label
+		
+			found = searchInStack(labelID, nw);
+			if (found){
+				cout << "Your package is being processed at the Hub" << endl;
+			} else {
+				found = searchInQueue(labelID, nwq);
+				if (found){
+					cout << "Your package has been delivered" << endl;
+				} else {
+					cout << "Your package has not been found. Check if there are any spelling errors." << endl;
+				}
+			}
+		
+		} else if ((labelID.substr(labelID.length() - 2)) == "NE") { // Check hub from label
+		
+			found = searchInStack(labelID, ne);
+			if (found){
+				cout << "Your package is being processed at the Hub" << endl;
+			} else {
+				found = searchInQueue(labelID, neq);
+				if (found){
+					cout << "Your package has been delivered" << endl;
+				} else {
+					cout << "Your package has not been found. Check if there are any spelling errors." << endl;
+				}
+			}
+		
+		} else if ((labelID.substr(labelID.length() - 2)) == "SW") { // Check hub from label
+		
+			found = searchInStack(labelID, sw);
+			if (found){
+				cout << "Your package is being processed at the Hub" << endl;
+			} else {
+				found = searchInQueue(labelID, swq);
+				if (found){
+					cout << "Your package has been delivered" << endl;
+				} else {
+					cout << "Your package has not been found. Check if there are any spelling errors." << endl;
+				}
+			}
+		
+		} else if ((labelID.substr(labelID.length() - 2)) == "SE") { // Check hub from label
+		
+			found = searchInStack(labelID, se);
+			if (found){
+				cout << "Your package is being processed at the Hub" << endl;
+			} else {
+				found = searchInQueue(labelID, seq);
+				if (found){
+					cout << "Your package has been delivered" << endl;
+				} else {
+					cout << "Your package has not been found. Check if there are any spelling errors." << endl;
+				}
+			}
+		
+		}
+		
+	}
 }
 
 
+bool searchInCentral(string labelID, Central c) {
+	if(!c.centralQueue.isEmpty()){
+		Node *current = c.centralQueue.front;
+		
+		while(current != nullptr){
+			
+			if(current->element.getLabel().packageId ==labelID){
+				return true;
+			}
+			
+			current = current->next;
+		}
+	} else {
+		return false;
+	}
+}
 
+
+bool searchInQueue(string labelID, Queue q){
+	if(!q.isEmpty()){
+		Node *current = q.front;
+		
+		while(current != nullptr){
+			
+			if(current->element.getLabel().packageId ==labelID){
+				return true;
+			}
+			
+			current = current->next;
+		}
+	} else {
+		return false;
+	}
+}
+
+
+bool searchInStack(string labelID, Stack s){
+	if(!s.isEmpty()){
+		for(int i = s.top ; i < N3 + 1; i++){
+			if(s.elements[i].getLabel().packageId == labelID){
+				return true;
+			}
+		}
+	}  else {
+		return false;
+	}
+}
 

@@ -2,7 +2,7 @@
 #define STACK_HPP
 #include "Package.hpp"
 
-//#define N3 24
+#define N3 24
 
 /* THINGS TO TAKE INTO CONSIDERATION ABOUT THIS STACK IMPLEMENTATION:
  * 
@@ -19,7 +19,7 @@ class Stack {
 
 private:
 
-    static const int MAX_CAPACITY = 24; // Vans' max capacity, established by the PDF
+    static const int MAX_CAPACITY = N3; // Vans' max capacity, established by the PDF
     
 
 public:
