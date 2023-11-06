@@ -1,9 +1,9 @@
-#include "Queue.hpp"
-#include "Package.hpp"
-#include <iostream>
+//#include "Queue.hpp"
+//#include "Package.hpp"
+//#include <iostream>
 #include <random>
 using namespace std;
-
+/*
 bool verify(Package package, Queue &queue){
 	Node *current = queue.front;
 	
@@ -34,7 +34,7 @@ void randomize(int n, Queue queue) {
 		queue.insert(p);
 		cout << queue.getFront().getLabel().coordinates.hub << ", " << queue.getFront().getLabel().packageId << ", " << queue.getFront().getLabel().clientId << endl;
 	}
-}
+}*/
 
 thread_local std::mt19937 gen(std::random_device{}());
 

@@ -23,14 +23,7 @@ private:
     
     Status status;
     Label label;
-	//static thread_local std::random_device rd;
 	static thread_local std::mt19937 gen;
-    
-    //no se muy bn por que pero al precer esto va aqui
-    //creo q es porque así solo se usan dentro del constructor y no en el main()
-    
-    /* EFECTIVAMENTE, LAS SIGUIENTES FUNCIONES VAN AQUÍ PORQUE SON PRIVADAS PARA ESTA CLASE, NO LAS 
-     * QUEREMOS USAR EN NINGÚN OTRO SITIO FUERA, YA QUE SON GENERADORAS DE INFORMACIÓN (DE DATOS) */
      
     string generateClientId();
     Label::Coords generateCoordinates();

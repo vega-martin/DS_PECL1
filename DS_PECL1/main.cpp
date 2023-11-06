@@ -1,7 +1,6 @@
 #include <iostream>
 #include "Package.hpp"
 #include "Queue.hpp"
-#include "Randomize.hpp"
 #include "Central.hpp"
 #include "Show.hpp"
 using namespace std;
@@ -69,31 +68,11 @@ int main(){
 	hub.makeNull();
 	cout << "this shoul be 1: " << hub.isEmpty() << endl;
     
-	
-	
-	//Queue central;
-	//no consigo hacer q gereneren los valores distintos...
-	//he cambiado cosas en la clase Package de lo del random por si queires mirarlo
 	cout << "\ncreating loads of packages\n" << endl;
-	//randomize(5,central);
 	
 	Central centralStation;
 	//centralStation.sendToHub();
 	showCentralStation(centralStation);
-	/*central.insert(p1);
-	central.insert(p2);
-	central.insert(p3);
-	for(int i = 0; i<350; i++){
-		Package p;
-		central.insert(p);
-	}
-	
-	Node *current = central.front;
-	
-	while(current != nullptr){
-		std::cout << "package id: " << current->element.getLabel().packageId << endl;
-		current = current->next;
-	}*/
 	
 	return 0;
 }

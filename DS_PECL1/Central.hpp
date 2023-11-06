@@ -3,8 +3,6 @@
 #include "Queue.hpp"
 #include "Package.hpp"
 
-//#define N2 73;
-
 class Central{
 public:
 	Queue centralQueue;

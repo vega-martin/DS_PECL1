@@ -2,8 +2,6 @@
 #define QUEUE_HPP
 #include "Package.hpp"
 
-//template <typename T> //this way it works with any data type (just in case)
-
 // this is the celltype
 struct Node {
     Package element;

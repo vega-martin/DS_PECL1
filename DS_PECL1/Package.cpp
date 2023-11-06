@@ -1,26 +1,20 @@
 #include <ctime>
 #include <random>
 #include "Package.hpp"
-#include "Queue.hpp"
 #include "Randomize.hpp"
 using namespace std;
 
-//std::random_device global_rd;
-
-//thread_local std::random_device Package::rd;
 thread_local std::mt19937 Package::gen(std::random_device{}());
 
 Label::Coords Package::generateCoordinates(){
-    // Generate random coordinates:
-    //mt19937 gen(global_rd());
-    //latidud entre 41.070998 y 40.854057
+    //generates random latidude between 41.070998 y 40.854057
     uniform_real_distribution<double> distributionLat(40.854057, 41.070999);
     double lat = distributionLat(gen); 
     int latD = (int)lat;
     int latM = (int) ((lat - (double)latD) * 60.f);
     int latS = (int) (((lat - (double)latD) * 60.f - (double)latM) * 60.f);
         
-    //longitud entre -5.837731 y -5.483051
+    //generates random longitude between -5.837731 y -5.483051
     uniform_real_distribution<double> distributionLon(-5.837731, -5.483050);
     double lon = distributionLon(gen);
     int lonD = (int)lon;
@@ -29,7 +23,7 @@ Label::Coords Package::generateCoordinates(){
     
     Label::Coords coordinates;
     
-    // determinar hub
+    //hub
     if (lat >= ((40.854057 + 41.070999)/2)){
         if (lon >= ((-5.837731 + (-5.483050))/2)){
             coordinates.hub[0] = 'N';
@@ -47,8 +41,9 @@ Label::Coords Package::generateCoordinates(){
             coordinates.hub[1] = 'W';
         }
     }
-	coordinates.hub[2] = '\0'; //apparently this char is considered a string when printed so it needs a closing character
-    // poner formato a las coordenadas
+	coordinates.hub[2] = '\0';
+	//apparently this char is considered a string when printed so it needs a closing character
+    // formatted coordinates
     coordinates.latitude = to_string(latD) + " " + to_string(latM) + " " + to_string(latS);
     coordinates.longitude = to_string(lonD) + " " + to_string(lonM) + " " + to_string(lonS);
     
@@ -58,19 +53,8 @@ Label::Coords Package::generateCoordinates(){
 
 
 string Package::generateLabelId(const Label::Coords &coordinates) {
-    /*//mt19937 gen(global_rd());
-    uniform_int_distribution<int> distribution(0, 25); // 26 letters in the array
-
-    // Get the random index from the distribution
-    int randomIndex = distribution(gen);
-
-    // Array of English alphabet letters (capitalized)
-    char alphabet[] = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
-
-    // Get the random letter from the array
-    char randLetter = alphabet[randomIndex];*/
 	char letter = randLetter();
-    //obtener fecha
+    //date
     time_t time = std::time(nullptr);
     tm *now = localtime(&time);
 	string day = to_string(now->tm_mday);
@@ -83,33 +67,14 @@ string Package::generateLabelId(const Label::Coords &coordinates) {
 	}
     string date = day + month + to_string(now->tm_year + 1900);
     
-    //obtener hub
+    //hub
     string hub = coordinates.hub;
-
-    // Ensure randNum has 3 digits
-    /*uniform_int_distribution<int> randNumDistribution(0, 999);
-    int randNum = randNumDistribution(gen);
-    string formattedNumber = to_string(randNum);
-    while (formattedNumber.length() < 3) {
-        formattedNumber = "0" + formattedNumber;
-    }*/
 	
 	string number = to_string(randNumber()) + to_string(randNumber());
 	number.erase(number.size()-1, 1);
 	
     // Final label id
     string labelId = number + letter + date + hub;
-	/*
-	Queue ids;
-	Node *current = ids.front;
-	while(current != nullptr){
-		if(current->element == labelId){
-			number = to_string(randNumber()) + to_string(randNumber());
-			number.erase(number.size()-1, 1);
-			labelId = number + letter + date + hub;
-		}
-		current = current->next;
-	}*/
 	
     return labelId;
 }
@@ -117,8 +82,7 @@ string Package::generateLabelId(const Label::Coords &coordinates) {
 
 
 string Package::generateClientId(){
-    //mt19937 gen(global_rd());
-    uniform_int_distribution<int> distribution(10000000, 99999999); //8cifras
+    uniform_int_distribution<int> distribution(10000000, 99999999);
     int idNum = distribution(gen);
     char letter[23] = {'T','R','W','A','G','M','Y','F','P','D','X','B','N','J','Z','S','Q','V','H','L','C','K','E'};
     int mod = idNum % 23;
@@ -130,9 +94,7 @@ string Package::generateClientId(){
 
 
 Package::Package(){
-	
-    //mt19937 gen(global_rd());
-    //first status recorded ?
+    //first status recorded
     status = Status::CentralStation;
     
     //generate label 

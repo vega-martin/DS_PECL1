@@ -2,9 +2,6 @@
 #define STACK_HPP
 #include "Package.hpp"
 
-// Esto es un comentario para ti Vega: el comentario largo siguiente es explicativo, lo podemos dejar si
-// te gusta como queda, o lo usamos en la memoria como explicación (o ambas cosas), salu2 y viva er beti
-
 /* THINGS TO TAKE INTO CONSIDERATION ABOUT THIS STACK IMPLEMENTATION:
  * 
  * STATIC / ARRAY IMPLEMENTATION: STACK SIZE WILL BE FIXED
