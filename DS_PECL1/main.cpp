@@ -4,6 +4,7 @@
 //#include "Stack.hpp"
 #include "Package.hpp"
 #include "Queue.hpp"
+#include "Randomize.hpp"
 using namespace std;
 
 int main(){
@@ -80,11 +81,24 @@ int main(){
 	//no consigo hacer q gereneren los valores distintos...
 	//he cambiado cosas en la clase Package de lo del random por si queires mirarlo
 	cout << "\ncreating loads of packages\n" << endl;
-	for(int i = 0; i < 35; i++){
+	/*for(int i = 0; i < 35; i++){
 		Package p;
 		central.insert(p);
 		cout << central.getFront().getLabel().coordinates.hub << ", " << central.getFront().getLabel().packageId << ", " << central.getFront().getLabel().clientId << endl;
-	};
+	};*/
+	randomize(5,central);
+	/*central.insert(p1);
+	central.insert(p2);
+	
+	Node *current = central.front;
+	
+	while(current != nullptr){
+		if(current->element.getLabel().packageId == p2.getLabel().packageId){
+			cout << "\nit foubnd 2\n" << endl;
+		}
+		current = current->next;
+	}
+	cout << "\nit did fid  it :(\n" << endl;*/
 	
 	return 0;
 }

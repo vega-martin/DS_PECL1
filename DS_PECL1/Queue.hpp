@@ -16,11 +16,11 @@ struct Node {
 
 class Queue {
 
-private:
-    Node *front;
-    Node *rear;
+
     
 public:
+
+	Node *front;
 
     Queue();
     
@@ -29,7 +29,9 @@ public:
     bool isEmpty() const;
     void makeNull();
     Package getFront() const;
-
+private:
+    
+    Node *rear;
 };
 
 #endif // QUEUE_HPP

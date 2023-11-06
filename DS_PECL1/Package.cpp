@@ -1,6 +1,9 @@
 #include <ctime>
 #include <random>
+#include <stdlib.h>
+#include <iostream>
 #include "Package.hpp"
+#include "Randomize.hpp"
 using namespace std;
 
 //std::random_device global_rd;
@@ -56,7 +59,7 @@ Label::Coords Package::generateCoordinates(){
 
 
 string Package::generateLabelId(const Label::Coords &coordinates) {
-    //mt19937 gen(global_rd());
+    /*//mt19937 gen(global_rd());
     uniform_int_distribution<int> distribution(0, 25); // 26 letters in the array
 
     // Get the random index from the distribution
@@ -66,26 +69,37 @@ string Package::generateLabelId(const Label::Coords &coordinates) {
     char alphabet[] = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
 
     // Get the random letter from the array
-    char randLetter = alphabet[randomIndex];
-
+    char randLetter = alphabet[randomIndex];*/
+	char letter = randLetter();
     //obtener fecha
     time_t time = std::time(nullptr);
     tm *now = localtime(&time);
-    string date = to_string(now->tm_mday) + to_string(now->tm_mon + 1) + to_string(now->tm_year + 1900);
+	string day = to_string(now->tm_mday);
+	while(day.length() < 2){
+		day = "0" + day;
+	}
+	string month = to_string(now->tm_mon + 1);
+	while(month.length() < 2){
+		month = "0" + month;
+	}
+    string date = day + month + to_string(now->tm_year + 1900);
     
     //obtener hub
     string hub = coordinates.hub;
 
     // Ensure randNum has 3 digits
-    uniform_int_distribution<int> randNumDistribution(0, 999);
+    /*uniform_int_distribution<int> randNumDistribution(0, 999);
     int randNum = randNumDistribution(gen);
     string formattedNumber = to_string(randNum);
     while (formattedNumber.length() < 3) {
         formattedNumber = "0" + formattedNumber;
-    }
-
+    }*/
+	
+	string number = to_string(randNumber()) + to_string(randNumber());
+	number.erase(number.size()-1, 1);
+	
     // Final label id
-    string labelId = formattedNumber + randLetter + date + hub;
+    string labelId = number + letter + date + hub;
 
     return labelId;
 }
