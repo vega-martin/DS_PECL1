@@ -5,7 +5,7 @@
 using namespace std;
 
 // An enumeration data type is used for the package's status:
-enum Status {CentralStation, Hub, OnItsWay, Delivered};
+enum Status {CentralStation, Hub, Delivered};
     
 struct Label {
     string packageId;

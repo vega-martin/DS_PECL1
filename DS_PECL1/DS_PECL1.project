@@ -93,6 +93,10 @@
     </Configuration>
   </Settings>
   <VirtualDirectory Name="src">
+    <File Name="Show.cpp"/>
+    <File Name="Show.hpp"/>
+    <File Name="Central.cpp"/>
+    <File Name="Central.hpp"/>
     <File Name="Queue.cpp"/>
     <File Name="Queue.hpp"/>
     <File Name="Stack.cpp"/>

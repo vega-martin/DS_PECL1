@@ -1,8 +1,7 @@
 #include <ctime>
 #include <random>
-#include <stdlib.h>
-#include <iostream>
 #include "Package.hpp"
+#include "Queue.hpp"
 #include "Randomize.hpp"
 using namespace std;
 
@@ -100,7 +99,18 @@ string Package::generateLabelId(const Label::Coords &coordinates) {
 	
     // Final label id
     string labelId = number + letter + date + hub;
-
+	/*
+	Queue ids;
+	Node *current = ids.front;
+	while(current != nullptr){
+		if(current->element == labelId){
+			number = to_string(randNumber()) + to_string(randNumber());
+			number.erase(number.size()-1, 1);
+			labelId = number + letter + date + hub;
+		}
+		current = current->next;
+	}*/
+	
     return labelId;
 }
 
