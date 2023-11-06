@@ -1,7 +1,6 @@
 #include "Show.hpp"
 #include "Central.hpp"
 #include "Stack.hpp"
-#include "Main.cpp"
 #include <iostream>
 #include <iomanip>
 using namespace std;
@@ -35,7 +34,7 @@ void mainMenu(Central c, Stack nw, Stack ne, Stack sw, Stack se, Queue nwq, Queu
 				break;
                 
             case 2:
-                showMenu(c, nw, ne, sw, se);
+                showMenu(c, nw, ne, sw, se, nwq, neq, swq, seq);
                 break;
                 
             case 3:
@@ -66,7 +65,7 @@ void mainMenu(Central c, Stack nw, Stack ne, Stack sw, Stack se, Queue nwq, Queu
 
 
 
-void showMenu(Central c, Stack nw, Stack ne, Stack sw, Stack se){
+void showMenu(Central c, Stack nw, Stack ne, Stack sw, Stack se, Queue nwq, Queue neq, Queue swq, Queue seq){
 	int action;
 	do{
 		cout << "Where do you want to show the packages from?" << endl;
@@ -104,7 +103,7 @@ void showMenu(Central c, Stack nw, Stack ne, Stack sw, Stack se){
 		}
 		
 	}while(action != 6);
-	mainMenu(c, nw, ne, sw, se);
+	mainMenu(c, nw, ne, sw, se, nwq, neq, swq, seq);
 }
 
 

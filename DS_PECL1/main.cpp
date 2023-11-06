@@ -27,7 +27,7 @@ int main(){
     Queue SEHubQueue;
     
     // Main menu is executed here, hence the program begins functioning:
-	mainMenu(central, NWHub, NEHub, SWHub, SEHub); // In Show.hpp and Show.cpp
+	mainMenu(central, NWHub, NEHub, SWHub, SEHub, NWHubQueue, NEHubQueue, SWHubQueue, SEHubQueue); // In Show.hpp and Show.cpp
     
     // As always, on any program we must include:
 	return 0;
