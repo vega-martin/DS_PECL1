@@ -38,12 +38,10 @@ void randomize(int n, Queue queue) {
 
 thread_local std::mt19937 gen(std::random_device{}());
 
-char randNumber(){
-	uniform_int_distribution<int> distribution(0, 9);
-	int randomIndex = distribution(gen);
-	char numbers[] = {'0','1','2','3','4','5','6','7','8','9'};
-	char number = numbers[randomIndex];
-	return number;
+int randNumber(){
+    uniform_int_distribution<int> distribution(0, 9);
+    int randomNumber = distribution(gen);
+    return randomNumber;
 }
 
 char randLetter(){

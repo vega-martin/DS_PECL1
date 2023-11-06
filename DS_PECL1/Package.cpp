@@ -53,31 +53,30 @@ Label::Coords Package::generateCoordinates(){
 
 
 string Package::generateLabelId(const Label::Coords &coordinates) {
-	char letter = randLetter();
-    //date
+    char letter = randLetter();
+
+    // date
     time_t time = std::time(nullptr);
     tm *now = localtime(&time);
-	string day = to_string(now->tm_mday);
-	while(day.length() < 2){
-		day = "0" + day;
-	}
-	string month = to_string(now->tm_mon + 1);
-	while(month.length() < 2){
-		month = "0" + month;
-	}
+    string day = to_string(now->tm_mday);
+    while(day.length() < 2){
+        day = "0" + day;
+    }
+    string month = to_string(now->tm_mon + 1);
+    while(month.length() < 2){
+        month = "0" + month;
+    }
     string date = day + month + to_string(now->tm_year + 1900);
-    
-    //hub
+
+    // hub
     string hub = coordinates.hub;
-	
-	string number = to_string(randNumber()) + to_string(randNumber());
-	number.erase(number.size()-1, 1);
-	
+
     // Final label id
-    string labelId = number + letter + date + hub;
-	
+    string labelId = to_string(randNumber()) + to_string(randNumber()) + to_string(randNumber()) + letter + date + hub;
+
     return labelId;
 }
+
 
 
 
