@@ -12,6 +12,11 @@ void emptyFilledHub(Stack& hub, Queue& hubQueue) {
     }
 }
 
+void package73Extraction(){
+    
+}
+
+
 void mainMenu(Central c, Stack nw, Stack ne, Stack sw, Stack se, Queue nwq, Queue neq, Queue swq, Queue seq){
 	int action;
 	
@@ -38,18 +43,25 @@ void mainMenu(Central c, Stack nw, Stack ne, Stack sw, Stack se, Queue nwq, Queu
                 break;
                 
             case 3:
-				//no lo he pensado muy bn xddd
-				/*supongo q aqui puedo llamar al metodo/s para distribuir los
-				 * paquetes desde la central. y si algun hub tiene 24 paquetes
-				 * q los envie (cambiar status)*/
-				 /*creo q lo mejor es hacerlo de la siguiente manera:
-				  * 1º evaluar si hay lgun hub lleno (así la 1ª estan todos vacios)
-				  * 2º vaciar el hub q este lleno (así la 1ª no hace nada)
-				  * 3º sacar lo 73 paquetes de la central y llevarlos  los hubs correspondientes
-				  * creo q es una buena lógica no?...ahora solo falta implementarla xd*/
+
+                //3º sacar lo 73 paquetes de la central y llevarlos  los hubs correspondientes
+                  
+                // LET'S EVALUATE WHETHER ANY HUBS ARE FULL
+                // IN THAT CASE, ALL OF THE PACKAGES WILL BE RE-STATUSED AS "DELIVERED" AND WILL LEAVE THE HUB
                   
                 if (nw.isFull())
                     emptyFilledHub(nw, nwq);
+                
+                if (ne.isFull())
+                    emptyFilledHub(ne, neq);
+                    
+                if (sw.isFull())
+                    emptyFilledHub(sw, swq);
+                    
+                if (se.isFull())
+                    emptyFilledHub(se, seq);
+                    
+                
                 
 				break;
 			case 4:
