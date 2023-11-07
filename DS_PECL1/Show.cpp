@@ -12,6 +12,51 @@ void emptyFilledHub(Stack& hub, Queue& hubQueue) {
     }
 }
 
+void packageExtraction(Central& c, Stack& nw, Stack& ne, Stack& sw, Stack& se, Queue& nwq, Queue& neq, Queue& swq, Queue& seq){
+    
+    for (int i = 0; i < 73; i++) {
+        
+        if (!c.centralQueue.isEmpty()){
+            
+            isAnyHubFull(nw, ne, sw, se, nwq, neq, swq, seq);
+
+            Package packageToDeliver = c.sendToHub();
+            
+            Label label = packageToDeliver.getLabel();
+            
+            string packageID = label.packageId;
+            
+            string zone = packageID.substr(packageID.length() - 2);
+            
+            if (zone == "NW"){
+                nw.insert(packageToDeliver);
+                continue;
+            }
+               
+            else if (zone == "NE"){
+                ne.insert(packageToDeliver);
+                continue;    
+            }
+            
+            else if (zone == "SW"){
+                sw.insert(packageToDeliver);
+                continue;    
+            }
+            
+            else if (zone == "SE"){
+                se.insert(packageToDeliver);
+                continue;    
+            }
+        } 
+        
+        else {
+            cout << "The Central Station has been emptied out!! There are no more packages to be delivered" << endl;
+            return;
+        }
+    }
+}
+
+
 void mainMenu(Central& c, Stack& nw, Stack& ne, Stack& sw, Stack& se, Queue& nwq, Queue& neq, Queue& swq, Queue& seq){
 	int action;
 	
@@ -43,9 +88,9 @@ void mainMenu(Central& c, Stack& nw, Stack& ne, Stack& sw, Stack& se, Queue& nwq
                 
             case 3:
                       
-                // PACKAGE EXTRACTION HAPPENS NOW:    
-                c.packageExtraction(nw, ne, sw, se, nwq, neq, swq, seq);    
-                cout << N2 << " packages have been extracted from the Central Station" << endl;
+                // PACKAGE EXTRACTION SHOULD HAPPEN NOW:    
+                packageExtraction(c, nw, ne, sw, se, nwq, neq, swq, seq);    
+                cout << "73 packages have been extracted from the Central Station" << endl;
                 break;
 				
 			case 4:
@@ -58,6 +103,8 @@ void mainMenu(Central& c, Stack& nw, Stack& ne, Stack& sw, Stack& se, Queue& nwq
 		}
 	} while (action != 4);
 }
+
+
 
 void showMenu(Central& c, Stack& nw, Stack& ne, Stack& sw, Stack& se, Queue& nwq, Queue& neq, Queue& swq, Queue& seq){
 	int action;
@@ -101,6 +148,7 @@ void showMenu(Central& c, Stack& nw, Stack& ne, Stack& sw, Stack& se, Queue& nwq
 }
 
 
+
 void showCentralStation(Central& central){
 	if(!central.centralQueue.isEmpty()){
 		Node *current = central.centralQueue.front;
@@ -141,7 +189,7 @@ void showHub(Stack hub){
 void showPackage(string labelID, Central c, Stack nw, Stack ne, Stack sw, Stack se, Queue nwq, Queue neq, Queue swq, Queue seq){
 	
 	bool found;
-    found = c.search(labelID);; // Check if it is in the Central Station
+    found = searchInCentral(labelID, c); // Check if it is in the Central Station
 	
 	if (found){
 		cout << "Your package is in the Central Station" << endl;
@@ -149,12 +197,11 @@ void showPackage(string labelID, Central c, Stack nw, Stack ne, Stack sw, Stack 
 		
 		if((labelID.substr(labelID.length() - 2)) == "NW") { // Check hub from label
 		
-			found = nw.search(labelID);
-            
+			found = searchInStack(labelID, nw);
 			if (found){
 				cout << "Your package is being processed at the Hub NW." << endl;
 			} else {
-				found = nwq.search(labelID);
+				found = searchInQueue(labelID, nwq);
 				if (found){
 					cout << "Your package has been delivered" << endl;
                 }
@@ -162,12 +209,11 @@ void showPackage(string labelID, Central c, Stack nw, Stack ne, Stack sw, Stack 
 		
 		} else if ((labelID.substr(labelID.length() - 2)) == "NE") { // Check hub from label
 		
-			found = ne.search(labelID);
-
+			found = searchInStack(labelID, ne);
 			if (found){
 				cout << "Your package is being processed at the Hub NE" << endl;
 			} else {
-				found = neq.search(labelID);
+				found = searchInQueue(labelID, neq);
 				if (found){
 					cout << "Your package has been delivered" << endl;
 				}
@@ -175,11 +221,11 @@ void showPackage(string labelID, Central c, Stack nw, Stack ne, Stack sw, Stack 
 		
 		} else if ((labelID.substr(labelID.length() - 2)) == "SW") { // Check hub from label
 		
-			found = sw.search(labelID);
+			found = searchInStack(labelID, sw);
 			if (found){
 				cout << "Your package is being processed at the Hub SW" << endl;
 			} else {
-				found = swq.search(labelID);
+				found = searchInQueue(labelID, swq);
 				if (found){
 					cout << "Your package has been delivered" << endl;
 				}
@@ -187,11 +233,11 @@ void showPackage(string labelID, Central c, Stack nw, Stack ne, Stack sw, Stack 
 		
 		} else if ((labelID.substr(labelID.length() - 2)) == "SE") { // Check hub from label
 		
-			found = se.search(labelID);
+			found = searchInStack(labelID, se);
 			if (found){
 				cout << "Your package is being processed at the Hub SE" << endl;
 			} else {
-				found = seq.search(labelID);
+				found = searchInQueue(labelID, seq);
 				if (found){
 					cout << "Your package has been delivered" << endl;
 				}
@@ -205,12 +251,60 @@ void showPackage(string labelID, Central c, Stack nw, Stack ne, Stack sw, Stack 
 }
 
 
+bool searchInCentral(string labelID, Central c) {
+    
+    bool b;
+	if(!c.centralQueue.isEmpty()){
+		Node *current = c.centralQueue.front;
+		
+		while(current != nullptr){
+			
+			if(current->element.getLabel().packageId ==labelID){
+				b = true;
+			}
+			
+			current = current->next;
+		}
+	} else {
+		b = false;
+	}
+    return b;
+}
 
 
+bool searchInQueue(string labelID, Queue q){
+    bool b;
+	if(!q.isEmpty()){
+		Node *current = q.front;
+		
+		while(current != nullptr){
+			
+			if(current->element.getLabel().packageId ==labelID){
+				b = true;
+			}
+			
+			current = current->next;
+		}
+	} else {
+		b = false;
+	}
+    return b;
+}
 
 
-
-
+bool searchInStack(string labelID, Stack s){
+    bool b;
+	if(!s.isEmpty()){
+		for(int i = s.top ; i < N3 + 1; i++){
+			if(s.elements[i].getLabel().packageId == labelID){
+				b = true;
+			}
+		}
+	}  else {
+		b = false;
+	}
+    return b;
+}
 
 void isAnyHubFull(Stack& nw, Stack& ne, Stack& sw, Stack& se, Queue& nwq, Queue& neq, Queue& swq, Queue& seq){
     

@@ -5,9 +5,13 @@
 #define N3 24
 
 /* THINGS TO TAKE INTO CONSIDERATION ABOUT THIS STACK IMPLEMENTATION:
+ * 
  * STATIC / ARRAY IMPLEMENTATION: STACK SIZE WILL BE FIXED
+ * 
  * AS SEEN IN THE THEORY LESSONS' SLIDES,
+ * 
  * THE BOTTOM OF THE STACK IS ANCHORED AT THE BOTTOM OF THE ARRAY (HIGH-INDEXED END  -> MAX_CAPACITY)
+ * 
  * AND THE STACK GROWS TOWARDS THE TOP OF THE ARRAY (LOW-INDEXED END -> 0)
  */
 
@@ -15,8 +19,9 @@ class Stack {
 
 private:
 
-    static const int MAX_CAPACITY = N3; // Vans' max capacity, established by the PDF (and as a global variable)
+    static const int MAX_CAPACITY = N3; // Vans' max capacity, established by the PDF
     
+
 public:
 
     Package elements[MAX_CAPACITY]; // Static array for storing elements (packages)
@@ -29,8 +34,6 @@ public:
     bool isEmpty() const;
     bool isFull() const;
     void makeNull();
-    
-    bool search(string labelId);
 
 };
 

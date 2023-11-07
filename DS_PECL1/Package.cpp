@@ -4,18 +4,17 @@
 #include "Randomize.hpp"
 using namespace std;
 
-// An object to randomize is created here:
-thread_local mt19937 Package::gen(random_device{}());
+thread_local std::mt19937 Package::gen(std::random_device{}());
 
 Label::Coords Package::generateCoordinates(){
-    //Generates a random latidude:
+    //generates random latidude between 41.070998 y 40.854057
     uniform_real_distribution<double> distributionLat(40.854057, 41.070999);
     double lat = distributionLat(gen); 
     int latD = (int)lat;
     int latM = (int) ((lat - (double)latD) * 60.f);
     int latS = (int) (((lat - (double)latD) * 60.f - (double)latM) * 60.f);
         
-    //Generates a random longitude:
+    //generates random longitude between -5.837731 y -5.483051
     uniform_real_distribution<double> distributionLon(-5.837731, -5.483050);
     double lon = distributionLon(gen);
     int lonD = (int)lon;
@@ -24,7 +23,7 @@ Label::Coords Package::generateCoordinates(){
     
     Label::Coords coordinates;
     
-    //Associates a package with its hub:
+    //hub
     if (lat >= ((40.854057 + 41.070999)/2)){
         if (lon >= ((-5.837731 + (-5.483050))/2)){
             coordinates.hub[0] = 'N';
@@ -42,11 +41,9 @@ Label::Coords Package::generateCoordinates(){
             coordinates.hub[1] = 'W';
         }
     }
-    /* We created a three-element array because it is considered a string when printed,
-    so it needs a closing character */
 	coordinates.hub[2] = '\0';
-    
-    // formatted coordinates:
+	//apparently this char is considered a string when printed so it needs a closing character
+    // formatted coordinates
     coordinates.latitude = to_string(latD) + " " + to_string(latM) + " " + to_string(latS);
     coordinates.longitude = to_string(lonD) + " " + to_string(lonM) + " " + to_string(lonS);
     
@@ -75,8 +72,7 @@ string Package::generateLabelId(const Label::Coords &coordinates) {
     string hub = coordinates.hub;
 
     // Final label id
-    string threeRandNumbers = to_string(randNumber()) + to_string(randNumber()) + to_string(randNumber());
-    string labelId = threeRandNumbers + letter + date + hub;
+    string labelId = to_string(randNumber()) + to_string(randNumber()) + to_string(randNumber()) + letter + date + hub;
 
     return labelId;
 }
@@ -87,12 +83,9 @@ string Package::generateLabelId(const Label::Coords &coordinates) {
 string Package::generateClientId(){
     uniform_int_distribution<int> distribution(10000000, 99999999);
     int idNum = distribution(gen);
-    
-    // Spanish IDs have a letter assigned to them, following this method:
     char letter[23] = {'T','R','W','A','G','M','Y','F','P','D','X','B','N','J','Z','S','Q','V','H','L','C','K','E'};
     int mod = idNum % 23;
     char idLetter = letter[mod];
-    
     string clientId = to_string(idNum) + idLetter;
     
     return clientId;
@@ -100,17 +93,16 @@ string Package::generateClientId(){
 
 
 Package::Package(){
-    //All packages start at the Central Station, so its status must be fixed:
+    //first status recorded
     status = Status::CentralStation;
     
-    //Label generation: 
+    //generate label 
     label.clientId = Package::generateClientId();
     label.coordinates = Package::generateCoordinates();
     label.packageId = Package::generateLabelId(label.coordinates);
     
 }
 
-// A few required setter and getter methods:
 
 Status Package::getStatus(){
     return status;
@@ -122,8 +114,4 @@ void Package::setStatus(Status newStatus){
 
 Label Package::getLabel(){
     return label;
-}
-
-void Package::setClientId(string id){
-    Package::getLabel().clientId = id;
 }

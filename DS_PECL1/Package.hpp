@@ -23,7 +23,7 @@ private:
     
     Status status;
     Label label;
-	static thread_local std::mt19937 gen; // Randomizer object
+	static thread_local std::mt19937 gen;
      
     string generateClientId();
     Label::Coords generateCoordinates();
@@ -36,8 +36,7 @@ public:
     
     Status getStatus();
     void setStatus(Status newStatus);
-    Label getLabel();
-    void setClientId(std::string id);
+    Label getLabel(); // May not be needed  
 
 };
 
