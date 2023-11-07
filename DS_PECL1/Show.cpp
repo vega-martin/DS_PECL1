@@ -12,57 +12,12 @@ void emptyFilledHub(Stack& hub, Queue& hubQueue) {
     }
 }
 
-void packageExtraction(Central& c, Stack& nw, Stack& ne, Stack& sw, Stack& se, Queue& nwq, Queue& neq, Queue& swq, Queue& seq){
-    
-    for (int i = 0; i < 73; i++) {
-        
-        if (!c.centralQueue.isEmpty()){
-            
-            isAnyHubFull(nw, ne, sw, se, nwq, neq, swq, seq);
-
-            Package packageToDeliver = c.sendToHub();
-            
-            Label label = packageToDeliver.getLabel();
-            
-            string packageID = label.packageId;
-            
-            string zone = packageID.substr(packageID.length() - 2);
-            
-            if (zone == "NW"){
-                nw.insert(packageToDeliver);
-                continue;
-            }
-               
-            else if (zone == "NE"){
-                ne.insert(packageToDeliver);
-                continue;    
-            }
-            
-            else if (zone == "SW"){
-                sw.insert(packageToDeliver);
-                continue;    
-            }
-            
-            else if (zone == "SE"){
-                se.insert(packageToDeliver);
-                continue;    
-            }
-        } 
-        
-        else {
-            cout << "The Central Station has been emptied out!! There are no more packages to be delivered" << endl;
-            return;
-        }
-    }
-}
-
-
 void mainMenu(Central& c, Stack& nw, Stack& ne, Stack& sw, Stack& se, Queue& nwq, Queue& neq, Queue& swq, Queue& seq){
 	int action;
 	
 	cout << std::setw(100) << "-------------------------------------   WELCOME TO THE PARCEL SERVICE SIMULATOR   -------------------------------------" << endl;
 	
-	do{
+	do {
 		cout << endl;
 		cout << "MENU (enter a number to choose an action):" << endl;
 		cout << " 1. Locate a package" << endl;
@@ -88,14 +43,15 @@ void mainMenu(Central& c, Stack& nw, Stack& ne, Stack& sw, Stack& se, Queue& nwq
                 
             case 3:
                       
-                // PACKAGE EXTRACTION SHOULD HAPPEN NOW:    
-                packageExtraction(c, nw, ne, sw, se, nwq, neq, swq, seq);    
-                cout << "73 packages have been extracted from the Central Station" << endl;
+                // PACKAGE EXTRACTION HAPPENS NOW:    
+                c.packageExtraction(nw, ne, sw, se, nwq, neq, swq, seq);    
+                cout << N2 << " packages have been extracted from the Central Station" << endl;
                 break;
 				
 			case 4:
 				cout << "Good bye!" << endl;
-				return;
+				break;
+				
 			default:
                 system("cls");
 				cout << "Invalid choice"<< endl;
@@ -103,8 +59,6 @@ void mainMenu(Central& c, Stack& nw, Stack& ne, Stack& sw, Stack& se, Queue& nwq
 		}
 	} while (action != 4);
 }
-
-
 
 void showMenu(Central& c, Stack& nw, Stack& ne, Stack& sw, Stack& se, Queue& nwq, Queue& neq, Queue& swq, Queue& seq){
 	int action;
@@ -148,7 +102,6 @@ void showMenu(Central& c, Stack& nw, Stack& ne, Stack& sw, Stack& se, Queue& nwq
 }
 
 
-
 void showCentralStation(Central& central){
 	if(!central.centralQueue.isEmpty()){
 		Node *current = central.centralQueue.front;
@@ -187,67 +140,88 @@ void showHub(Stack hub){
 
 
 void showPackage(string labelID, Central c, Stack nw, Stack ne, Stack sw, Stack se, Queue nwq, Queue neq, Queue swq, Queue seq){
-	
+	// Muestra un paquete por consola dado el id
 	bool found;
     found = searchInCentral(labelID, c); // Check if it is in the Central Station
 	
 	if (found){
 		cout << "Your package is in the Central Station" << endl;
-	} else {
-		
-		if((labelID.substr(labelID.length() - 2)) == "NW") { // Check hub from label
-		
-			found = searchInStack(labelID, nw);
-			if (found){
-				cout << "Your package is being processed at the Hub NW." << endl;
-			} else {
-				found = searchInQueue(labelID, nwq);
-				if (found){
-					cout << "Your package has been delivered" << endl;
-                }
-			}
-		
-		} else if ((labelID.substr(labelID.length() - 2)) == "NE") { // Check hub from label
-		
-			found = searchInStack(labelID, ne);
-			if (found){
-				cout << "Your package is being processed at the Hub NE" << endl;
-			} else {
-				found = searchInQueue(labelID, neq);
-				if (found){
-					cout << "Your package has been delivered" << endl;
-				}
-			}
-		
-		} else if ((labelID.substr(labelID.length() - 2)) == "SW") { // Check hub from label
-		
-			found = searchInStack(labelID, sw);
-			if (found){
-				cout << "Your package is being processed at the Hub SW" << endl;
-			} else {
-				found = searchInQueue(labelID, swq);
-				if (found){
-					cout << "Your package has been delivered" << endl;
-				}
-			}
-		
-		} else if ((labelID.substr(labelID.length() - 2)) == "SE") { // Check hub from label
-		
-			found = searchInStack(labelID, se);
-			if (found){
-				cout << "Your package is being processed at the Hub SE" << endl;
-			} else {
-				found = searchInQueue(labelID, seq);
-				if (found){
-					cout << "Your package has been delivered" << endl;
-				}
-			}
-		
-		} else {
-            cout << "Your package has not been found. Check if there are any spelling errors." << endl;
-        }
-		
+		return;
 	}
+		
+	if((labelID.substr(labelID.length() - 2)) == "NW") { // Check hub from label
+	
+		found = searchInStack(labelID, nw);
+		
+		if (found){
+			cout << "Your package is being processed at the Hub NW." << endl;
+			return;
+		}
+			
+		found = searchInQueue(labelID, nwq);
+		
+		if (found){
+			cout << "Your package has been delivered" << endl;
+			return;
+		}
+	
+	} 
+	if ((labelID.substr(labelID.length() - 2)) == "NE") { // Check hub from label
+	
+		found = searchInStack(labelID, ne);
+
+		if (found){
+			cout << "Your package is being processed at the Hub NE" << endl;
+			return;
+		} 
+			
+		found = searchInQueue(labelID, neq);
+		
+		if (found){
+			cout << "Your package has been delivered" << endl;
+			return;
+		}
+		
+	
+	} 
+	if ((labelID.substr(labelID.length() - 2)) == "SW") { // Check hub from label
+	
+		found = searchInStack(labelID, sw);
+		
+		if (found){
+			cout << "Your package is being processed at the Hub SW" << endl;
+			return;
+		} 
+			
+		found = searchInQueue(labelID, swq);
+		
+		if (found){
+			cout << "Your package has been delivered" << endl;
+			return;
+		}
+		
+	
+	} 
+	if ((labelID.substr(labelID.length() - 2)) == "SE") { // Check hub from label
+	
+		found = searchInStack(labelID, se);
+		if (found){
+			cout << "Your package is being processed at the Hub SE" << endl;
+			return;
+		} 
+			
+		found = searchInQueue(labelID, seq);
+		
+		if (found){
+			cout << "Your package has been delivered" << endl;
+			return;
+		}
+		
+	
+	} 
+	cout << "Your package has not been found. Check if there are any spelling errors." << endl;
+	
+	
 }
 
 
@@ -306,29 +280,30 @@ bool searchInStack(string labelID, Stack s){
     return b;
 }
 
+
 void isAnyHubFull(Stack& nw, Stack& ne, Stack& sw, Stack& se, Queue& nwq, Queue& neq, Queue& swq, Queue& seq){
     
-                // THIS METHOD EVALUATES WHETHER ANY HUBS ARE FULL
-                // IN THAT CASE, ALL OF THE PACKAGES WILL BE RE-STATUSED AS "DELIVERED" AND WILL LEAVE THE HUB
-                  
-                if (nw.isFull()){
-                    emptyFilledHub(nw, nwq);
-                    cout << "THE NW HUB HAS BEEN FILLED UP. ALL PACKAGES INSIDE WILL BE DELIVERED NOW" << endl;
-                }
-                
-                if (ne.isFull()){
-                    emptyFilledHub(ne, neq);
-                    cout << "THE NE HUB HAS BEEN FILLED UP. ALL PACKAGES INSIDE WILL BE DELIVERED NOW" << endl;
-                }
-                    
-                if (sw.isFull()){
-                    emptyFilledHub(sw, swq);
-                    cout << "THE SW HUB HAS BEEN FILLED UP. ALL PACKAGES INSIDE WILL BE DELIVERED NOW" << endl;
-                }
-                    
-                if (se.isFull()){
-                    emptyFilledHub(se, seq);
-                    cout << "THE SE HUB HAS BEEN FILLED UP. ALL PACKAGES INSIDE WILL BE DELIVERED NOW" << endl;
-                }
+	// THIS METHOD EVALUATES WHETHER ANY HUBS ARE FULL
+	// IN THAT CASE, ALL OF THE PACKAGES WILL BE RE-STATUSED AS "DELIVERED" AND WILL LEAVE THE HUB
+	  
+	if (nw.isFull()){
+		emptyFilledHub(nw, nwq);
+		cout << "THE NW HUB HAS BEEN FILLED UP. ALL PACKAGES INSIDE WILL BE DELIVERED NOW" << endl;
+	}
+	
+	if (ne.isFull()){
+		emptyFilledHub(ne, neq);
+		cout << "THE NE HUB HAS BEEN FILLED UP. ALL PACKAGES INSIDE WILL BE DELIVERED NOW" << endl;
+	}
+		
+	if (sw.isFull()){
+		emptyFilledHub(sw, swq);
+		cout << "THE SW HUB HAS BEEN FILLED UP. ALL PACKAGES INSIDE WILL BE DELIVERED NOW" << endl;
+	}
+		
+	if (se.isFull()){
+		emptyFilledHub(se, seq);
+		cout << "THE SE HUB HAS BEEN FILLED UP. ALL PACKAGES INSIDE WILL BE DELIVERED NOW" << endl;
+	}
 }
 

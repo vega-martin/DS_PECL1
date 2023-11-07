@@ -49,3 +49,7 @@ Package Queue::getFront() const {
 	}
 	return front->element;
 }
+
+//
+
+

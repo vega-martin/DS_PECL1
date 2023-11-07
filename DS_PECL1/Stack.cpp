@@ -38,3 +38,4 @@ bool Stack::isFull() const {
 void Stack::makeNull() {
     top = MAX_CAPACITY;
 }
+
