@@ -2,19 +2,17 @@
 #define QUEUE_HPP
 #include "Package.hpp"
 
-// this is the celltype
+// As queues are implemented dynamically, we create celltypes:
 struct Node {
     Package element;
     Node *next;
-    /* Constructor del struct.
-     * we access value by reference and use "const" to make it read only
-     */
+    /* Structs are no-method classes, but DO have a constructor.
+     * We access values by reference and use "const" to make them read only */
+     
     Node(const Package &value) : element(value), next(nullptr) {}
 };
 
 class Queue {
-
-
     
 public:
 
@@ -27,8 +25,10 @@ public:
     bool isEmpty() const;
     void makeNull();
     Package getFront() const;
-private:
     
+    bool search(string labelId);
+    
+private: 
     Node *rear;
 };
 

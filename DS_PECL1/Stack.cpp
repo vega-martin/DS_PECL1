@@ -38,3 +38,21 @@ bool Stack::isFull() const {
 void Stack::makeNull() {
     top = MAX_CAPACITY;
 }
+
+// THE FOLLOWING METHOD IS OUTSIDE OF OUR STANDARD STACK IMPLEMENTATION: REQUIRED BY THE PROGRAM'S SPECS
+// AND OUR OWN NEEDS:
+
+bool Stack::search(string labelId){
+    bool b;
+    if(!Stack::isEmpty()){  
+        for(int i = Stack::top ; i < N3 + 1; i++){
+            if(Stack::elements[i].getLabel().packageId == labelId){
+                b = true;
+            }
+        }
+    }  
+    else {
+        b = false;
+    }
+    return b;
+}

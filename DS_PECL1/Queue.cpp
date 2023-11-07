@@ -49,3 +49,25 @@ Package Queue::getFront() const {
 	}
 	return front->element;
 }
+
+//
+
+bool Queue::search(string labelId){
+    bool b;
+	if(!Queue::isEmpty()){
+		Node *current = Queue::front;
+		
+		while(current != nullptr){
+			
+			if(current->element.getLabel().packageId ==labelId){
+				b = true;
+			}
+			
+			current = current->next;
+		}
+        delete current;
+	} else {
+		b = false;
+	}
+    return b;
+}
